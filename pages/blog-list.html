@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog - Martial Arts Dojo">
+    <title>Blog | Martial Arts Dojo</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+        
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container flex justify-between items-center">
+            <a href="../index.html" class="logo flex items-center gap-sm">
+                <i class="fas fa-fist-raised fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">DOJO</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="nav-links items-center">
+                <div class="relative group px-3 py-2">
+                    <button
+                        class="flex items-center gap-1 text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Home
+                        <div
+                            class="absolute left-0 top-full mt-2 w-48 bg-white-100 dark:bg-slate-200 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 p-1">
+                            <a href="../index.html"
+                                class="block px-4 py-2.5 text-sm text-black dark:text-black hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-white dark:hover:text-white rounded-lg transition-colors">Home</a>
+                            <a href="../home2.html"
+                                class="block px-4 py-2.5 text-sm text-black dark:text-black hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-white dark:hover:text-white rounded-lg transition-colors">Home2</a>
+
+                        </div>
+                </div>
+
+                <a href="about.html">About</a>
+                <a href="classes.html">Classes</a>
+                <a href="instructors.html">Instructors</a>
+                <div class="relative group px-3 py-2">
+                    <button
+                        class="flex items-center gap-1 text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Blogs
+                        <div
+                            class="absolute left-0 top-full mt-2 w-48 bg-white-100 dark:bg-slate-200 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 p-1">
+                            <a  href="blog-list.html"
+                                class="block px-4 py-2.5 text-sm text-black dark:text-black hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-white dark:hover:text-white rounded-lg transition-colors active">BlogList</a>
+                            <a href="blog-single.html"
+                                class="block px-4 py-2.5 text-sm text-black dark:text-black hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-white dark:hover:text-white rounded-lg transition-colors">BlogSingle</a>
+
+                        </div>
+                </div>
+
+
+                <a href="contact.html">Contact</a>
+                <div class="relative group px-3 py-2">
+                    <button
+                        class="flex items-center gap-1 text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Dashboard
+                        <div
+                            class="absolute left-0 top-full mt-2 w-48 bg-white-100 dark:bg-slate-200 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 p-1">
+                            <a href="dashboard-student.html"
+                                class="block px-4 py-2.5 text-sm text-black dark:text-black hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-white dark:hover:text-white rounded-lg transition-colors">User</a>
+                            <a href="dashboard-admin.html"
+                                class="block px-4 py-2.5 text-sm text-black dark:text-black hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-white dark:hover:text-white rounded-lg transition-colors">Admin</a>
+
+                        </div>
+                </div>
+
+                <button class="btn btn-outline"><a href="login.html">Sign In / Sign Up</a></button>
+                <button class="btn btn-outline theme-toggle-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-outline rtl-toggle-btn" aria-label="Toggle RTL">
+                    <span style="font-weight: bold; font-size: 0.8rem;">RTL</span>
+                </button>
+            </nav>
+
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="flex justify-between items-center mb-lg">
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">Menu</span>
+            <button class="mobile-menu-btn mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <a href="index.html" class="form-label">Home</a>
+        <a href="home2.html" class="form-label">Home2</a>
+        <a href="about.html" class="form-label">About</a>
+        <a href="classes.html" class="form-label">Classes</a>
+        <a href="instructors.html" class="form-label">Instructors</a>
+        <a href="blog-list.html" class="form-label active">Blog</a>
+        <a href="blog-single.html" class="form-label">Blog Single</a>
+        <a href="contact.html" class="form-label">Contact</a>
+        <a href="dashboard-student.html" class="form-label">Dashboard</a>
+        <a href="dashboard-admin.html" class="form-label">Dashboard</a>
+        <a href="login.html" class="form-label">Login</a>
+        <a href="register.html" class="form-label">Register</a>
+        <div class="flex gap-sm mt-md">
+            <button class="btn btn-outline theme-toggle-btn" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="btn btn-outline rtl-toggle-btn" aria-label="Toggle RTL">
+                <span style="font-weight: bold; font-size: 0.8rem;">RTL</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Section 1: Hero -->
+    <section class="section flex items-center justify-center text-center"
+        style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517438476312-10d79c077509?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover; color: white; min-height: 350px;">
+        <div class="container">
+            <h1 style="color: white; font-size: 3.5rem; margin-bottom: var(--spacing-sm);">Dojo Insights</h1>
+            <p style="font-size: 1.25rem;">News, tips, and wisdom from the mat.</p>
+        </div>
+    </section>
+
+    <!-- Section 2: Featured Post -->
+    <section class="section">
+        <div class="container">
+            <div class="card grid grid-2 gap-lg" style="padding: 0; overflow: hidden; align-items: stretch;">
+                <div style="min-height: 300px;">
+                    <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        style="width: 100%; height: 100%; object-fit: cover;" alt="Featured">
+                </div>
+                <div
+                    style="padding: var(--spacing-lg); display: flex; flex-direction: column; justify-content: center;">
+                    <span
+                        style="color: var(--primary-color); font-weight: 600; margin-bottom: var(--spacing-sm);">Featured
+                        • Feb 10, 2026</span>
+                    <h2 class="mb-md">5 Ways Martial Arts Builds Unshakable Confidence</h2>
+                    <p class="mb-md" style="color: var(--text-muted);">Confidence isn't something you're born with; it's
+                        something you build. Discover how stepping onto the mat can transform your mindset and
+                        self-esteem.</p>
+                    <a href="blog-single.html" class="btn btn-primary" style="align-self: flex-start;">Read Article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3 & 4 Combined: Grid & Sidebar (Counts as structural sections) -->
+    <section class="section" style="background-color: var(--bg-card);">
+        <div class="container grid" style="grid-template-columns: 2fr 1fr; gap: var(--spacing-lg);">
+
+            <!-- Article Grid -->
+            <div class="grid grid-2">
+                <!-- Post 1 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: var(--spacing-md);">
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Training • Feb 5</div>
+                    <h3 class="mb-sm"><a href="blog-single.html">BJJ vs. Judo: Key Differences</a></h3>
+                    <p style="font-size: 0.9rem; margin-bottom: var(--spacing-md);">Understanding the history and rule
+                        sets of these two grappling giants.</p>
+                    <a href="blog-single.html" style="color: var(--primary-color); font-weight: 600;">Read More
+                        &rarr;</a>
+                </div>
+                <!-- Post 2 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: var(--spacing-md);">
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Nutrition • Jan 28</div>
+                    <h3 class="mb-sm"><a href="blog-single.html">Fueling for Fight Night</a></h3>
+                    <p style="font-size: 0.9rem; margin-bottom: var(--spacing-md);">What to eat before and after
+                        training to maximize performance.</p>
+                    <a href="blog-single.html" style="color: var(--primary-color); font-weight: 600;">Read More
+                        &rarr;</a>
+                </div>
+                <!-- Post 3 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: var(--spacing-md);">
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Kids • Jan 15</div>
+                    <h3 class="mb-sm"><a href="blog-single.html">Handling Bullies</a></h3>
+                    <p style="font-size: 0.9rem; margin-bottom: var(--spacing-md);">How martial arts teaches
+                        de-escalation rather than fighting.</p>
+                    <a href="blog-single.html" style="color: var(--primary-color); font-weight: 600;">Read More
+                        &rarr;</a>
+                </div>
+                <!-- Post 4 -->
+                <div class="card">
+                    <img src="../assets/images/belt.webp"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: var(--spacing-md);">
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">History • Jan 10</div>
+                    <h3 class="mb-sm"><a href="blog-single.html">Origins of Karate</a></h3>
+                    <p style="font-size: 0.9rem; margin-bottom: var(--spacing-md);">A deep dive into the Okinawan roots
+                        of modern Karate.</p>
+                    <a href="blog-single.html" style="color: var(--primary-color); font-weight: 600;">Read More
+                        &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside>
+                <div class="card mb-md">
+                    <h4 class="mb-sm">Search</h4>
+                    <input type="text" class="form-control" placeholder="Search articles...">
+                </div>
+
+                <div class="card mb-md">
+                    <h4 class="mb-sm">Categories</h4>
+                    <ul class="flex flex-column gap-sm">
+                        <li><a href="#" class="flex justify-between"><span>Training</span> <span
+                                    style="color:var(--text-muted)">(12)</span></a></li>
+                        <li><a href="#" class="flex justify-between"><span>Nutrition</span> <span
+                                    style="color:var(--text-muted)">(5)</span></a></li>
+                        <li><a href="#" class="flex justify-between"><span>Kids</span> <span
+                                    style="color:var(--text-muted)">(8)</span></a></li>
+                        <li><a href="#" class="flex justify-between"><span>News</span> <span
+                                    style="color:var(--text-muted)">(3)</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4 class="mb-sm">Popular Tags</h4>
+                    <div class="flex flex-wrap gap-sm">
+                        <span
+                            style="background:var(--border-color); padding:4px 8px; border-radius:4px; font-size:0.8rem;">BJJ</span>
+                        <span
+                            style="background:var(--border-color); padding:4px 8px; border-radius:4px; font-size:0.8rem;">Karate</span>
+                        <span
+                            style="background:var(--border-color); padding:4px 8px; border-radius:4px; font-size:0.8rem;">Fitness</span>
+                        <span
+                            style="background:var(--border-color); padding:4px 8px; border-radius:4px; font-size:0.8rem;">Self
+                            Defense</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Section 5: Pagination -->
+    <section class="section text-center">
+        <div class="container">
+            <div class="flex gap-sm justify-center">
+                <a href="#" class="btn btn-outline" disabled>&laquo; Prev</a>
+                <a href="#" class="btn btn-primary">1</a>
+                <a href="#" class="btn btn-outline">2</a>
+                <a href="#" class="btn btn-outline">3</a>
+                <a href="#" class="btn btn-outline">Next &raquo;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Newsletter -->
+    <section class="section text-center" style="background-color: var(--secondary-color); color: white;">
+        <div class="container" style="max-width: 600px;">
+            <i class="fas fa-envelope-open-text fa-3x mb-md"></i>
+            <h2 style="color: white; margin-bottom: var(--spacing-sm);">Join Our Newsletter</h2>
+            <p class="mb-md">Get exclusive training tips, nutrition guides, and dojo news delivered to your inbox.</p>
+            <form class="flex gap-sm">
+                <input type="email" class="form-control" placeholder="Enter your email" style="border: none;">
+                <button class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--bg-body); color: var(--text-main); padding: var(--spacing-xl) 0;">
+        <div class="container grid grid-4 gap-md mb-lg">
+            <div><a href="../index.html" class="logo flex items-center gap-sm">
+                <i class="fas fa-fist-raised fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">DOJO</span>
+            </a>
+                <p style="color: var(--text-muted);">Empowering lives through martial arts.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--text-main);">Links</h4>
+                <ul>
+                    <li><a href="#about" style="color: var(--text-muted);">About</a></li>
+                    <li><a href="#classes" style="color: var(--text-muted);">Classes</a></li>
+                    <li><a href="#contact" style="color: var(--text-muted);">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: var(--text-main);">Legal</h4>
+                <ul>
+                    <li><a href="#" style="color: var(--text-muted);">Privacy Policy</a></li>
+                    <li><a href="#" style="color: var(--text-muted);">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: var(--text-main);">Social</h4>
+                <div class="flex gap-sm">
+                    <a href="#" style="color: var(--text-muted);"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" style="color: var(--text-muted);"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" style="color: var(--text-muted);"><i class="fab fa-twitter fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center"
+            style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: var(--spacing-md); color: var(--text-muted);">
+            <p>&copy; 2026 Martial Arts Dojo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

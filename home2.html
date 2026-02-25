@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Martial Arts Dojo - Creative Template">
+    <title>Martial Arts Dojo | Creative Home</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap"
+        rel="stylesheet">
+    
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <!-- Page Specific Styles Override -->
+    <style>
+        :root {
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Roboto Condensed', sans-serif;
+            --primary-color: #ff3e3e;
+            /* Aggressive Red */
+        }
+
+        .hero-creative {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            overflow: hidden;
+        }
+
+        .hero-creative::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: clamp(4rem, 10vw, 8rem);
+            text-transform: uppercase;
+            line-height: 0.9;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: white;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+    </style>
+</head>
+
+<body class="dark-mode" data-theme="dark"> <!-- Default to Dark Mode for Creative Layout -->
+
+    <!-- Navigation (Transparent) -->
+    <header class="site-header" style="background: transparent; border: none; position: fixed; width: 100%;">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="logo flex items-center gap-sm">
+                <i class="fas fa-fist-raised fa-2x" style="color: var(--primary-color);"></i>
+                <span
+                    style="font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; color: white;">DOJO</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" style="color: white;">Home Standard</a>
+                <a  class="active" href="#" style="color: white; border-bottom: 2px solid var(--primary-color);">Creative</a>
+                <a href="pages/about.html" class="form-label">About</a>
+                <a href="pages/gallery.html" class="form-label">Gallery</a>
+                <a href="pages/classes.html" style="color: white;">Classes</a>
+                <a href="pages/instructors.html" style="color: white;">Team</a>
+                <a href="pages/blog-list.html" class="form-label">Blog</a>
+                <a href="pages/blog-single.html" class="form-label">Blog Single</a>
+                <a href="pages/contact.html" style="color: white;">Contact</a>
+                <a href="pages/login.html" style="color: white;">Sign In / Sign Up</a>
+                <button class="btn btn-outline theme-toggle-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-outline rtl-toggle-btn" aria-label="Toggle RTL">
+                    <span style="font-weight: bold; font-size: 0.8rem;">RTL</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false"
+                    style="color: white; font-size: 1.5rem;">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="flex justify-between items-center mb-lg">
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">Menu</span>
+            <button class="mobile-menu-btn mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <a href="index.html" class="form-label">Home</a>
+        <a href="home2.html" class="form-label active">Creative Home</a>
+        <a href="pages/about.html" class="form-label">About</a>
+        <a href="pages/classes.html" class="form-label">Classes</a>
+        <a href="pages/instructors.html" class="form-label">Instructors</a>
+        <a href="pages/blog-list.html" class="form-label">Blog</a>
+        <a href="pages/contact.html" class="form-label">Contact</a>
+        <div class="flex gap-sm mt-md">
+            <button class="btn btn-outline theme-toggle-btn" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="btn btn-outline rtl-toggle-btn" aria-label="Toggle RTL">
+                <span style="font-weight: bold; font-size: 0.8rem;">RTL</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-creative">
+        <div class="vertical-text">Est. 1995 • Tokyo • New York</div>
+        <div class="hero-content">
+            <h1 class="hero-title">Unleash<br><span style="color: var(--primary-color);">The Beast</span></h1>
+            <p
+                style="font-size: 1.5rem; max-width: 600px; margin: 0 auto 40px; text-transform: uppercase; letter-spacing: 2px;">
+                Martial Arts & Fitness</p>
+            <a href="pages/register.html" class="btn btn-primary"
+                style="padding: 15px 40px; border-radius: 0; text-transform: uppercase; letter-spacing: 1px;">Join
+                Now</a>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down fa-2x"></i>
+        </div>
+    </section>
+
+    <!-- Masonry/Grid Section -->
+    <section class="section" style="background: #111;">
+        <div class="container">
+            <div class="grid grid-3 gap-sm">
+                <div style="grid-column: span 2; position: relative; overflow: hidden; height: 400px;" class="group">
+                    <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                        style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 0.5s;"
+                        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(100%)'">
+                    <div style="position: absolute; bottom: 20px; left: 20px;">
+                        <h2 style="color: white; text-transform: uppercase;">Muay Thai</h2>
+                    </div>
+                </div>
+                <div
+                    style="background: var(--primary-color); padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+                    <h3 style="color: white; font-size: 2rem;">Train Hard.</h3>
+                    <p style="color: rgba(255,255,255,0.8);">"The more you sweat in peace, the less you bleed in war."
+                    </p>
+                </div>
+                <div
+                    style="background: #222; padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+                    <h3 style="color: white; font-size: 2rem;">Fight Easy.</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Expert coaching from world champions.</p>
+                </div>
+                <div style="grid-column: span 2; position: relative; overflow: hidden; height: 300px;">
+                    <img src="https://images.unsplash.com/photo-1517438322307-e67111335449?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                        style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 0.5s;"
+                        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(100%)'">
+                    <div style="position: absolute; bottom: 20px; left: 20px;">
+                        <h2 style="color: white; text-transform: uppercase;">BJJ</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="section" style="background: #000; color: white;">
+        <div class="container grid grid-2 items-center gap-lg">
+            <div>
+                <h4 style="color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px;">Our Philosophy
+                </h4>
+                <h2 style="font-size: 3rem; text-transform: uppercase; margin-bottom: 20px;">Mind Over Matter</h2>
+                <p style="color: #aaa; margin-bottom: 20px; font-size: 1.1rem;">
+                    We believe that true strength comes from within. Our training goes beyond physical conditioning—it
+                    cultivates mental resilience, focus, and unwavering discipline.
+                </p>
+                <div class="grid grid-2 gap-md">
+                    <div>
+                        <h3 style="color: white; font-size: 2.5rem; color: var(--primary-color);">01</h3>
+                        <h4 style="text-transform: uppercase;">Discipline</h4>
+                        <p style="color: #777; font-size: 0.9rem;">Consistent effort yields results.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: white; font-size: 2.5rem; color: var(--primary-color);">02</h3>
+                        <h4 style="text-transform: uppercase;">Respect</h4>
+                        <p style="color: #777; font-size: 0.9rem;">For self, opponents, and the art.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="position: relative;">
+                <img src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Meditation" style="width: 100%; filter: grayscale(100%);">
+                <div
+                    style="position: absolute; top: 20px; right: -20px; width: 100px; height: 100px; border: 5px solid var(--primary-color);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors Creative -->
+    <section class="section" style="background: #111; color: white;">
+        <div class="container text-center mb-lg">
+            <h2 style="text-transform: uppercase; font-size: 3rem;">The <span
+                    style="color: var(--primary-color);">Masters</span></h2>
+        </div>
+        <div class="container grid grid-3 gap-md">
+            <div style="background: #000; padding: 20px; text-align: center; border: 1px solid #222;">
+                <img src="https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 2px solid var(--primary-color);">
+                <h3 style="text-transform: uppercase;">Sensei Tanaka</h3>
+                <p
+                    style="color: var(--primary-color); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">
+                    Karate Grandmaster</p>
+                <p style="color: #777; margin-top: 10px;">"Precision beats power, and timing beats speed."</p>
+            </div>
+            <div
+                style="background: #000; padding: 20px; text-align: center; border: 1px solid #222; transform: scale(1.1); border-color: var(--primary-color);">
+                <img src="assets/images/instractor1.webp"
+                    style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 2px solid white;">
+                <h3 style="text-transform: uppercase;">Coach Silva</h3>
+                <p
+                    style="color: var(--primary-color); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">
+                    BJJ Black Belt</p>
+                <p style="color: #777; margin-top: 10px;">"The ground is my ocean, and I am the shark."</p>
+            </div>
+            <div style="background: #000; padding: 20px; text-align: center; border: 1px solid #222;">
+                <img src="assets/images/pose1.webp"
+                    style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 2px solid var(--primary-color);">
+                <h3 style="text-transform: uppercase;">Kru Nok</h3>
+                <p
+                    style="color: var(--primary-color); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">
+                    Muay Thai Champion</p>
+                <p style="color: #777; margin-top: 10px;">"Eight limbs, one mind. Strike with purpose."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section"
+        style="background: url('https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') fixed center/cover; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8);"></div>
+        <div class="container text-center" style="position: relative; z-index: 2; color: white;">
+            <i class="fas fa-quote-left fa-3x" style="color: var(--primary-color); margin-bottom: 20px;"></i>
+            <h2 style="font-size: 2.5rem; line-height: 1.4; max-width: 800px; margin: 0 auto 30px;">"This dojo changed
+                my life. I walked in weak and insecure, and I am becoming strong and confident. The community is
+                unmatched."</h2>
+            <h4 style="text-transform: uppercase;">- Sarah Jenkins</h4>
+            <p style="color: #aaa;">Student since 2023</p>
+        </div>
+    </section>
+
+    <!-- Newsletter / CTA -->
+    <section class="section" style="background: var(--primary-color); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="text-transform: uppercase; font-size: 3rem; margin-bottom: 20px;">Ready to Fight?</h2>
+            <p style="margin-bottom: 30px; font-size: 1.2rem;">Join our newsletter for training tips and exclusive
+                offers.</p>
+            <div style="max-width: 500px; margin: 0 auto; display: flex; gap: 10px;">
+                <input type="email" placeholder="Enter your email"
+                    style="flex: 1; padding: 15px; border: none; outline: none; background: rgba(0,0,0,0.2); color: white;">
+                <button
+                    style="padding: 15px 30px; background: black; color: white; border: none; font-weight: bold; text-transform: uppercase; cursor: pointer;">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: black; border-top: 1px solid #333; padding: 50px 0; text-align: center;">
+        <div class="flex justify-center gap-md">
+            <a href="../index.html" class="logo flex items-center gap-sm">
+                <i class="fas fa-fist-raised fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">DOJO</span>
+            </a>
+            <p style="color: white;">Martial Arts & Fitness</p>
+        </div>
+        <div class="flex justify-center gap-md" style="margin-top: 20px;">
+            <a href="#" style="color: #555;">Instagram</a>
+            <a href="#" style="color: #555;">Youtube</a>
+            <a href="#" style="color: #555;">Twitter</a>
+        </div>
+        <div class="flex justify-center gap-md" style="margin-top: 20px;">
+            <p style="color: white;">© 2026 DOJO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

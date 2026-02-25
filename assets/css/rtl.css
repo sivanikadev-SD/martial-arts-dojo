@@ -1,0 +1,60 @@
+/* 
+  Martial Arts Dojo - RTL Support
+*/
+
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Flex Mirroring */
+[dir="rtl"] .ml-auto {
+    margin-inline-start: auto;
+    margin-inline-end: 0;
+}
+
+[dir="rtl"] .mr-auto {
+    margin-inline-end: auto;
+    margin-inline-start: 0;
+}
+
+/* Grid Mirroring */
+[dir="rtl"] .head-coach-split img {
+    order: 2;
+}
+
+/* Transformations */
+[dir="rtl"] .btn--outline {
+    border-inline-start: 1px solid currentColor;
+}
+
+/* Utilities */
+[dir="rtl"] .testi-card {
+    border-left: none;
+    border-right: 3px solid var(--primary-red);
+}
+
+[dir="rtl"] .timeline::after {
+    left: auto;
+    right: 20px;
+}
+
+[dir="rtl"] .timeline-item {
+    padding-inline-start: 0;
+    padding-inline-end: 60px;
+}
+
+[dir="rtl"] .timeline-item::after {
+    left: auto;
+    right: 15px;
+}
+
+@media (max-width: 640px) {
+    [dir="rtl"] .timeline::after {
+        right: 10px;
+    }
+
+    [dir="rtl"] .timeline-item::after {
+        right: 5px;
+    }
+}

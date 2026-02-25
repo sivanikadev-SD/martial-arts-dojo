@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Schedule | Student Dashboard</title>
+
+    <!-- Fonts & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header flex items-center gap-sm">
+                <i class="fas fa-fist-raised fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">DOJO</span>
+            </div>
+
+            <div class="sidebar-menu">
+                <a href="dashboard-student.html" class="menu-item"><i class="fas fa-home"></i> Dashboard</a>
+                <a href="dashboard-student-schedule.html" class="menu-item active"><i class="fas fa-calendar-alt"></i>
+                    My Schedule</a>
+                <a href="dashboard-student-progress.html" class="menu-item"><i class="fas fa-award"></i> Progress</a>
+                <a href="dashboard-student-payment.html" class="menu-item"><i class="fas fa-credit-card"></i>
+                    Payments</a>
+                <a href="dashboard-student-profile.html" class="menu-item"><i class="fas fa-user-cog"></i> Profile</a>
+            </div>
+
+            <div style="padding: var(--spacing-lg);">
+                <a href="#" class="btn btn-outline logout-btn"
+                    style="width: 100%; border-color: rgba(255,255,255,0.2); color: white;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <button class="mobile-menu-btn" onclick="toggleSidebar()"
+                    style="display: block; color: var(--text-main);">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="flex items-center gap-md">
+                    <button class="btn btn-outline theme-toggle-btn"><i class="fas fa-moon"></i></button>
+                    <button class="btn btn-outline rtl-toggle-btn"><span
+                            style="font-weight: bold; font-size: 0.8rem;">RTL</span></button>
+                    <div class="flex items-center gap-sm">
+                        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" alt="Profile">
+                        <span style="font-weight: 600;">Alex Student</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-container">
+                <h2 class="mb-lg">My Class Schedule</h2>
+
+                <div class="grid grid-2 gap-lg">
+                    <!-- Upcoming Classes List -->
+                    <div class="card">
+                        <div class="flex justify-between items-center mb-md">
+                            <h3>Upcoming Classes</h3>
+                            <button class="btn btn-outline" style="font-size: 0.8rem;">Sync to Calendar</button>
+                        </div>
+
+                        <div class="flex items-center gap-md mb-md"
+                            style="padding-bottom: 12px; border-bottom: 1px solid var(--border-color);">
+                            <div
+                                style="background: var(--bg-body); padding: 10px; border-radius: 8px; text-align: center; min-width: 60px;">
+                                <div style="font-weight: 700; color: var(--primary-color);">FEB</div>
+                                <div style="font-size: 1.2rem; font-weight: 800;">14</div>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0;">Advanced Karate</h4>
+                                <p class="text-muted">6:00 PM - 7:30 PM • Sensei John</p>
+                                <span style="font-size: 0.8rem; color: #2ed573;"><i class="fas fa-check-circle"></i>
+                                    Registered</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-md"
+                            style="padding-bottom: 12px; border-bottom: 1px solid var(--border-color);">
+                            <div
+                                style="background: var(--bg-body); padding: 10px; border-radius: 8px; text-align: center; min-width: 60px;">
+                                <div style="font-weight: 700; color: var(--primary-color);">FEB</div>
+                                <div style="font-size: 1.2rem; font-weight: 800;">16</div>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0;">Sparring Session</h4>
+                                <p class="text-muted">5:00 PM - 6:30 PM • Sensei Sarah</p>
+                                <button class="btn btn-sm btn-primary mt-xs"
+                                    style="padding: 4px 8px; font-size: 0.7rem;">Check In</button>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-md mt-md">
+                            <div
+                                style="background: var(--bg-body); padding: 10px; border-radius: 8px; text-align: center; min-width: 60px;">
+                                <div style="font-weight: 700; color: var(--primary-color);">FEB</div>
+                                <div style="font-size: 1.2rem; font-weight: 800;">18</div>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0;">Conditioning</h4>
+                                <p class="text-muted">6:00 PM - 7:00 PM • Coach Mike</p>
+                                <button class="btn btn-sm btn-primary mt-xs"
+                                    style="padding: 4px 8px; font-size: 0.7rem;">Check In</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Weekly Visual Info -->
+                    <div class="card">
+                        <h3 class="mb-md">Program Details</h3>
+                        <div
+                            style="background: var(--bg-body); padding: 15px; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                            <h4 class="mb-xs">Adult BJJ Program</h4>
+                            <p class="text-muted mb-sm">Your primary enrolled program.</p>
+                            <div class="text-muted" style="font-size: 0.9rem;">
+                                <div class="mb-xs"><i class="fas fa-clock mr-sm"></i> Mon, Wed, Fri @ 7:00 PM</div>
+                                <div><i class="fas fa-map-marker-alt mr-sm"></i> Main Dojo Floor</div>
+                            </div>
+                        </div>
+
+                        <h4 class="mt-lg mb-md">Open Mat Hours</h4>
+                        <div class="text-muted">
+                            <p class="mb-xs"><strong>Saturday:</strong> 10:00 AM - 12:00 PM</p>
+                            <p><strong>Sunday:</strong> 11:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Mobile Sidebar Overlay -->
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Simple Sidebar Toggle Logic for Dashboard
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

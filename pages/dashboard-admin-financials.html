@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Financials | Martial Arts Dojo</title>
+
+    <!-- Fonts & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header flex items-center gap-sm">
+                <i class="fas fa-fist-raised fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">DOJO</span>
+            </div>
+            <div style="padding: 0 20px; margin-top: 10px;">
+                <span
+                    style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.8rem;">ADMIN
+                    MODE</span>
+            </div>
+
+            <div class="sidebar-menu">
+                <a href="dashboard-admin.html" class="menu-item"><i class="fas fa-tachometer-alt"></i> Overview</a>
+                <a href="dashboard-admin-members.html" class="menu-item"><i class="fas fa-users"></i> Members</a>
+                <a href="dashboard-admin-classes.html" class="menu-item"><i class="fas fa-calendar-check"></i>
+                    Classes</a>
+                <a href="dashboard-admin-financials.html" class="menu-item active"><i class="fas fa-dollar-sign"></i>
+                    Financials</a>
+                <a href="dashboard-admin-settings.html" class="menu-item"><i class="fas fa-cog"></i> Settings</a>
+            </div>
+
+            <div style="padding: var(--spacing-lg);">
+                <a href="#" class="btn btn-outline logout-btn"
+                    style="width: 100%; border-color: rgba(255,255,255,0.2); color: white;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <button class="mobile-menu-btn" onclick="toggleSidebar()"
+                    style="display: block; color: var(--text-main);">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="flex items-center gap-md">
+                    <button class="btn btn-outline theme-toggle-btn"><i class="fas fa-moon"></i></button>
+                    <button class="btn btn-outline rtl-toggle-btn"><span
+                            style="font-weight: bold; font-size: 0.8rem;">RTL</span></button>
+                    <div class="flex items-center gap-sm">
+                        <img src="https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" alt="Admin">
+                        <span style="font-weight: 600;">Sensei John</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-container">
+                <div class="flex justify-between items-center mb-lg">
+                    <h2 style="margin: 0;">Financial Overview</h2>
+                    <button class="btn btn-outline"><i class="fas fa-download mr-sm"></i> Export Report</button>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-3 gap-md mb-lg">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(46, 213, 115, 0.1); color: #2ed573;">
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div>
+                            <h3 style="margin: 0;">$12,450</h3>
+                            <p class="text-muted">Total Revenue (This Month)</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(55, 66, 250, 0.1); color: #3742fa;">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <div>
+                            <h3 style="margin: 0;">$850</h3>
+                            <p class="text-muted">Outstanding Invoices</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(255, 71, 87, 0.1); color: #ff4757;">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div>
+                            <h3 style="margin: 0;">$2,100</h3>
+                            <p class="text-muted">Expenses</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transactions Table -->
+                <div class="card">
+                    <div class="flex justify-between items-center mb-md">
+                        <h3 class="mb-0">Recent Transactions</h3>
+                        <a href="#" style="font-size: 0.9rem;">View All</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Member</th>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-muted">#INV-001</td>
+                                    <td style="font-weight: 500;">Mike Ross</td>
+                                    <td>Monthly Membership - Adult BJJ</td>
+                                    <td>Feb 12, 2024</td>
+                                    <td style="font-weight: 600;">$150.00</td>
+                                    <td><span
+                                            style="background: rgba(46, 213, 115, 0.2); color: #2ed573; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Paid</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">#INV-002</td>
+                                    <td style="font-weight: 500;">Sarah Connor</td>
+                                    <td>Gi Purchase</td>
+                                    <td>Feb 11, 2024</td>
+                                    <td style="font-weight: 600;">$120.00</td>
+                                    <td><span
+                                            style="background: rgba(46, 213, 115, 0.2); color: #2ed573; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Paid</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">#INV-003</td>
+                                    <td style="font-weight: 500;">Johnny Lawrence</td>
+                                    <td>Monthly Membership - Cobra Kai</td>
+                                    <td>Feb 10, 2024</td>
+                                    <td style="font-weight: 600;">$150.00</td>
+                                    <td><span
+                                            style="background: rgba(255, 71, 87, 0.2); color: #ff4757; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Overdue</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">#INV-004</td>
+                                    <td style="font-weight: 500;">Danny Larusso</td>
+                                    <td>Private Lesson</td>
+                                    <td>Feb 09, 2024</td>
+                                    <td style="font-weight: 600;">$80.00</td>
+                                    <td><span
+                                            style="background: rgba(46, 213, 115, 0.2); color: #2ed573; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Paid</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Mobile Sidebar Overlay -->
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Simple Sidebar Toggle Logic for Dashboard
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

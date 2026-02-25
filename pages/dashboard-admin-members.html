@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Members | Martial Arts Dojo</title>
+
+    <!-- Fonts & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header flex items-center gap-sm">
+                <i class="fas fa-fist-raised fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">DOJO</span>
+            </div>
+            <div style="padding: 0 20px; margin-top: 10px;">
+                <span
+                    style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.8rem;">ADMIN
+                    MODE</span>
+            </div>
+
+            <div class="sidebar-menu">
+                <a href="dashboard-admin.html" class="menu-item"><i class="fas fa-tachometer-alt"></i> Overview</a>
+                <a href="dashboard-admin-members.html" class="menu-item active"><i class="fas fa-users"></i> Members</a>
+                <a href="dashboard-admin-classes.html" class="menu-item"><i class="fas fa-calendar-check"></i>
+                    Classes</a>
+                <a href="dashboard-admin-financials.html" class="menu-item"><i class="fas fa-dollar-sign"></i>
+                    Financials</a>
+                <a href="dashboard-admin-settings.html" class="menu-item"><i class="fas fa-cog"></i> Settings</a>
+            </div>
+
+            <div style="padding: var(--spacing-lg);">
+                <a href="#" class="btn btn-outline logout-btn"
+                    style="width: 100%; border-color: rgba(255,255,255,0.2); color: white;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <button class="mobile-menu-btn" onclick="toggleSidebar()"
+                    style="display: block; color: var(--text-main);">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="flex items-center gap-md">
+                    <button class="btn btn-outline theme-toggle-btn"><i class="fas fa-moon"></i></button>
+                    <button class="btn btn-outline rtl-toggle-btn"><span
+                            style="font-weight: bold; font-size: 0.8rem;">RTL</span></button>
+                    <div class="flex items-center gap-sm">
+                        <img src="https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" alt="Admin">
+                        <span style="font-weight: 600;">Sensei John</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-container">
+                <div class="flex justify-between items-center mb-lg">
+                    <h2 style="margin: 0;">Members Directory</h2>
+                    <div class="flex gap-sm">
+                        <input type="text" placeholder="Search members..."
+                            style="padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-card); color: var(--text-main);">
+                        <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i> Add Member</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Program</th>
+                                    <th>Belt</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight: 500;">Mike Ross</td>
+                                    <td>mike.ross@example.com</td>
+                                    <td>Adult BJJ</td>
+                                    <td>Blue</td>
+                                    <td><span
+                                            style="background: rgba(46, 213, 115, 0.2); color: #2ed573; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Active</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding: 4px 8px;"><i
+                                                class="fas fa-edit"></i></button>
+                                        <button class="btn btn-outline"
+                                            style="padding: 4px 8px; color: var(--danger-color); border-color: var(--danger-color);"><i
+                                                class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 500;">Sarah Connor</td>
+                                    <td>sarah.c@example.com</td>
+                                    <td>Self Defense</td>
+                                    <td>White</td>
+                                    <td><span
+                                            style="background: rgba(255, 165, 2, 0.2); color: #ffa502; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Trial</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding: 4px 8px;"><i
+                                                class="fas fa-edit"></i></button>
+                                        <button class="btn btn-outline"
+                                            style="padding: 4px 8px; color: var(--danger-color); border-color: var(--danger-color);"><i
+                                                class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 500;">Danny Larusso</td>
+                                    <td>danny@example.com</td>
+                                    <td>Karate Kids</td>
+                                    <td>Black</td>
+                                    <td><span
+                                            style="background: rgba(46, 213, 115, 0.2); color: #2ed573; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Active</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding: 4px 8px;"><i
+                                                class="fas fa-edit"></i></button>
+                                        <button class="btn btn-outline"
+                                            style="padding: 4px 8px; color: var(--danger-color); border-color: var(--danger-color);"><i
+                                                class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 500;">Johnny Lawrence</td>
+                                    <td>johnny@example.com</td>
+                                    <td>Cobra Kai</td>
+                                    <td>Black</td>
+                                    <td><span
+                                            style="background: rgba(255, 71, 87, 0.2); color: #ff4757; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Overdue</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding: 4px 8px;"><i
+                                                class="fas fa-edit"></i></button>
+                                        <button class="btn btn-outline"
+                                            style="padding: 4px 8px; color: var(--danger-color); border-color: var(--danger-color);"><i
+                                                class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="flex justify-between items-center mt-md"
+                        style="padding-top: 15px; border-top: 1px solid var(--border-color);">
+                        <span class="text-muted" style="font-size: 0.9rem;">Showing 4 of 150 members</span>
+                        <div class="flex gap-xs">
+                            <button class="btn btn-outline" disabled><i class="fas fa-chevron-left"></i></button>
+                            <button class="btn btn-outline"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Mobile Sidebar Overlay -->
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Simple Sidebar Toggle Logic for Dashboard
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

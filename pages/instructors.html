@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Masters - The Lineage | DojoX</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥋</text></svg>">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="../assets/css/toast.css">
+
+    <style>
+        /* Instructors Specific Styles */
+        .head-coach-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: var(--bg-card);
+            border-radius: 40px;
+            padding: 60px;
+        }
+
+        .instructor-card {
+            background: #111;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid #222;
+        }
+
+        .cal-row {
+            display: grid;
+            grid-template-columns: 100px 1fr auto;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 1px solid #222;
+            align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+            .head-coach-split {
+                grid-template-columns: 1fr;
+                padding: 40px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="header__logo">DOJO<span>X</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="home-2.html">Modern</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="instructors.html" class="active">Instructors</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dashboard-student.html">Student</a></li>
+                <li><a href="dashboard-admin.html">Admin</a></li>
+                <li class="mobile-only"><a href="../index.html?msg=logout_success">Logout</a></li>
+            </ul>
+            <div class="controls">
+                <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+                <button id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+                <a href="login.html" class="btn btn--outline"
+                    style="padding: 8px 15px; font-size: 0.75rem; border-color: var(--accent-gold); color: var(--accent-gold);">PORTAL</a>
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECTION 1: MASTERS HERO -->
+        <section class="section"
+            style="padding-top: 150px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('../assets/images/banner2.webp') center/cover; text-align: center;">
+            <div class="container">
+                <span style="color: var(--primary-red); font-weight: 700; letter-spacing: 2px;">THE LINEAGE</span>
+                <h1 style="font-size: clamp(3rem, 10vw, 5.5rem); font-weight: 900;">MEET THE <span
+                        style="color: var(--accent-gold);">MASTERS</span></h1>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 20px auto;">A world-class team with
+                    over 100 years of combined martial arts mastery.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: HEAD COACH PROFILE -->
+        <section class="section container">
+            <div class="head-coach-split">
+                <img src="../assets/images/instractor1.webp"
+                    style="width: 100%; border-radius: 20px; border: 4px solid var(--primary-red);">
+                <div>
+                    <span style="color: var(--primary-red); font-weight: 700;">HEAD INSTRUCTOR</span>
+                    <h2 style="font-size: 2.5rem; margin: 15px 0;">Master Hiroshi Tanaka</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">6th Degree Black Belt in Brazilian
+                        Jiu-Jitsu and 5th Degree in Shotokan Karate. Master Hiroshi has dedicated his life to the
+                        refinement of combat techniques and character development.</p>
+                    <blockquote
+                        style="border-inline-start: 4px solid var(--accent-gold); padding-inline-start: 20px; font-style: italic; color: var(--accent-gold);">
+                        "Technique is the vehicle; humble discipline is the destination."
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: INSTRUCTOR GRID -->
+        <section class="section container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2>Our Teaching Staff</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div class="instructor-card">
+                    <img src="../assets/images/master.webp"
+                        style="width: 100%;">
+                    <div style="padding: 20px;">
+                        <h4>Coach Sarah</h4>
+                        <p style="font-size: 0.8rem; color: var(--primary-red);">MUAY THAI HEAD</p>
+                    </div>
+                </div>
+                <div class="instructor-card">
+                    <img src="../assets/images/master4.jpg"
+                        style="width: 100%;">
+                    <div style="padding: 20px;">
+                        <h4>Sensei Ken</h4>
+                        <p style="font-size: 0.8rem; color: var(--primary-red);">KARATE MASTER</p>
+                    </div>
+                </div>
+                <div class="instructor-card">
+                    <img src="../assets/images/master2.jpg"
+                        style="width: 100%;">
+                    <div style="padding: 20px;">
+                        <h4>Dave Miller</h4>
+                        <p style="font-size: 0.8rem; color: var(--primary-red);">BJJ NO-GI PRO</p>
+                    </div>
+                </div>
+                <div class="instructor-card">
+                    <img src="../assets/images/master3.jpg"
+                        style="width: 100%;">
+                    <div style="padding: 20px;">
+                        <h4>Elena Sokol</h4>
+                        <p style="font-size: 0.8rem; color: var(--primary-red);">YOUTH LEADERSHIP</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: TRAINING PHILOSOPHY -->
+        <section class="section" style="background: var(--bg-card);">
+            <div class="container" style="text-align: center; max-width: 800px;">
+                <h2>The DojoX Method</h2>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-top: 40px;">
+                    <div>
+                        <h4 style="color: var(--accent-gold);">01. Technical Logic</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">We emphasize understanding the 'why'
+                            behind every movement.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent-gold);">02. Safety First</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">A controlled environment ensures
+                            long-term progress without injury.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent-gold);">03. Character</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Building resilience that translates to
+                            off-mat success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: SEMINAR CALENDAR -->
+        <section class="section container">
+            <h2 style="margin-bottom: 30px;">Guest Seminars</h2>
+            <div style="background: var(--bg-card); border-radius: 20px; overflow: hidden;">
+                <div class="cal-row">
+                    <div style="font-weight: 700;">MAR 12</div>
+                    <div>
+                        <strong>Gracie Lineage BJJ Seminar</strong>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">Focus: Pressure Passing</p>
+                    </div>
+                    <a href="#" class="btn btn--outline" style="font-size: 0.7rem;">Register</a>
+                </div>
+                <div class="cal-row">
+                    <div style="font-weight: 700;">APR 05</div>
+                    <div>
+                        <strong>Modern Striking for MMA</strong>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">Guest: Coach X from Vegas</p>
+                    </div>
+                    <a href="#" class="btn btn--outline" style="font-size: 0.7rem;">Register</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: CERTIFICATIONS -->
+        <section class="section container" style="text-align: center;">
+            <h2 style="margin-bottom: 40px;">Global Accreditation</h2>
+            <div style="display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; opacity: 0.5;">
+                <span style="font-weight: 900;">IBJJF REGISTERED</span>
+                <span style="font-weight: 900;">WUKO AFFILIATED</span>
+                <span style="font-weight: 900;">MTIA CERTIFIED</span>
+            </div>
+        </section>
+
+        <!-- SECTION 7: CAREER/CTA -->
+        <section class="section" style="background: var(--primary-red); color: white; text-align: center;">
+            <div class="container">
+                <h2 style="font-size: 2.5rem;">Join Our Coaching Team?</h2>
+                <p style="margin: 20px 0 35px;">We are always looking for passionate martial artists to join our staff.
+                </p>
+                <a href="contact.html" class="btn btn--accent">View Openings</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="section" style="background: #000; text-align: center; border-top: 1px solid #222;">
+        <div class="container">
+            <a href="../index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
+            <p style="color: var(--text-muted); margin: 20px 0;">123 Warrior Way, Tokyo, Japan • Precision. Discipline.
+                Respect.</p>
+            <div
+                style="display: flex; justify-content: center; gap: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Support</a>
+                <a href="dashboard-admin.html">Admin</a>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.75rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS
+                RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

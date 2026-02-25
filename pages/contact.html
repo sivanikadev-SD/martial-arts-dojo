@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Reach the Dojo | DojoX</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥋</text></svg>">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="../assets/css/toast.css">
+
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+        }
+
+        .info-box {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #222;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 15px;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: white;
+            font-family: inherit;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="header__logo">DOJO<span>X</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="home-2.html">Modern</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="dashboard-student.html">Student</a></li>
+                <li><a href="dashboard-admin.html">Admin</a></li>
+                <li class="mobile-only"><a href="../index.html">Logout</a></li>
+            </ul>
+            <div class="controls">
+                <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+                <button id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+                <a href="login.html" class="btn btn--outline"
+                    style="padding: 8px 15px; font-size: 0.75rem; border-color: var(--accent-gold); color: var(--accent-gold);">PORTAL</a>
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECTION 1: SUPPORT HERO -->
+        <section class="section"
+            style="padding-top: 150px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('../assets/images/banner2.webp') center/cover; text-align: center;">
+            <div class="container">
+                <span style="color: var(--primary-red); font-weight: 700; letter-spacing: 2px;">GET IN TOUCH</span>
+                <h1 style="font-size: clamp(3rem, 10vw, 5rem); font-weight: 900; margin-top: 15px;">START YOUR <br><span
+                        style="color: var(--accent-gold);">REVOLUTION</span></h1>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 20px auto;">Have questions about
+                    classes, private coaching, or enrollment? We're here to help.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: LOCATION/MAP BOX -->
+        <section class="section container">
+            <div class="map-placeholder">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7479754683745!2d139.6989406!3d35.6580339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b563b00109f%3A0x337328def1e2ab26!2sShibuya%20Crossing!5e0!3m2!1sen!2sjp!4v1700000000000!5m2!1sen!2sjp"
+                    width="100%" height="100%" style="border:0; border-radius: 30px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION 3: CONTACT METHOD GRID -->
+        <section class="section container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="info-box">
+                    <h4 style="color: var(--primary-red);">CALL US</h4>
+                    <p>+81 03-1234-5678</p>
+                    <small style="color: var(--text-muted);">Mon-Fri: 9am - 9pm</small>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--primary-red);">EMAIL US</h4>
+                    <p>oss@dojoxacademy.com</p>
+                    <small style="color: var(--text-muted);">24/7 Inquiry Support</small>
+                </div>
+                <div class="info-box">
+                    <h4 style="color: var(--primary-red);">VISIT US</h4>
+                    <p>Shibuya Crossing, Tokyo</p>
+                    <small style="color: var(--text-muted);">Public transport access</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INQUIRY FORM -->
+        <section class="section container" style="background: var(--bg-card); border-radius: 40px; padding: 60px;">
+            <div class="contact-grid">
+                <div>
+                    <h2>Send a Message</h2>
+                    <p style="color: var(--text-secondary); margin-top: 20px;">Fill out the form and our enrollment
+                        officer will reach out within 2 hours.</p>
+                </div>
+                <form onsubmit="return false;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label style="font-size: 0.8rem; display: block; margin-bottom: 8px;">Full Name</label>
+                            <input type="text" placeholder="Bruce Lee">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-size: 0.8rem; display: block; margin-bottom: 8px;">Email Address</label>
+                            <input type="email" placeholder="bruce@jkd.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label style="font-size: 0.8rem; display: block; margin-bottom: 8px;">Subject</label>
+                        <select>
+                            <option>General Inquiry</option>
+                            <option>Free Trial Booking</option>
+                            <option>Membership Problem</option>
+                            <option>Private Coaching</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label style="font-size: 0.8rem; display: block; margin-bottom: 8px;">Message</label>
+                        <textarea rows="5" placeholder="Tell us about your martial arts goals..."></textarea>
+                    </div>
+                    <button class="btn btn--primary" style="width: 100%;">Send Inquiry</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECTION 5: SOCIAL LINKS BAR -->
+        <section class="section container" style="text-align: center;">
+            <p style="color: var(--text-muted); margin-bottom: 20px;">FOLLOW THE FLOW</p>
+            <div style="display: flex; gap: 40px; justify-content: center; font-weight: 700;">
+                <a href="#">INSTAGRAM</a>
+                <a href="#">YOUTUBE</a>
+                <a href="#">X (TWITTER)</a>
+                <a href="#">FACEBOOK</a>
+            </div>
+        </section>
+
+
+
+        <!-- SECTION 7: CAREERS PROMO -->
+        <section class="section container" style="text-align: center;">
+            <div style="border: 2px dashed #444; padding: 40px; border-radius: 20px;">
+                <h3>Join the Staff?</h3>
+                <p style="color: var(--text-muted); margin: 15px 0;">We have open positions for front-desk and junior
+                    coaches.</p>
+                <a href="#" style="color: var(--primary-red); font-weight: 700;">BROWSE CAREERS →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="section" style="background: #000; text-align: center; border-top: 1px solid #222;">
+        <div class="container">
+            <a href="../index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
+            <p style="color: var(--text-muted); margin: 20px 0;">123 Warrior Way, Tokyo, Japan • Precision. Discipline.
+                Respect.</p>
+            <div
+                style="display: flex; justify-content: center; gap: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Support</a>
+                <a href="dashboard-admin.html">Admin</a>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.75rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS
+                RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Dashboard | DojoX</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥋</text></svg>">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="../assets/css/toast.css">
+
+    <style>
+        .dash-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        .dash-sidebar {
+            background: var(--bg-card);
+            padding: 40px 20px;
+            border-inline-end: 1px solid #222;
+            position: sticky;
+            top: 80px;
+            height: calc(100vh - 80px);
+        }
+
+        .dash-main {
+            padding: 40px;
+            background: var(--bg-main);
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #222;
+        }
+
+        .belt-progress-viz {
+            height: 200px;
+            background: #111;
+            border-radius: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .belt-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, var(--accent-gold), transparent);
+            width: 65%;
+            opacity: 0.3;
+        }
+
+        .alert-item {
+            padding: 15px;
+            background: rgba(211, 47, 47, 0.1);
+            border-inline-start: 4px solid var(--primary-red);
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        .dash-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            color: var(--text-muted);
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .dash-nav-item:hover,
+        .dash-nav-item.active {
+            background: rgba(211, 47, 47, 0.1);
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .dash-section {
+            display: none;
+        }
+
+        .dash-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .video-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #222;
+        }
+
+        .video-card img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        @media (max-width: 1024px) {
+            .dash-container {
+                grid-template-columns: 1fr;
+            }
+
+            .dash-sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="dashboard-body">
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="header__logo">DOJO<span>X</span></a>
+            <div class="controls">
+                <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="dash-container" style="padding-top: 80px;">
+        <!-- Sidebar Navigation -->
+        <aside class="dash-sidebar">
+            <div class="header__logo" style="margin-bottom: 50px;">STUDENT<span>X</span></div>
+            <nav style="display: flex; flex-direction: column; gap: 8px;">
+                <a href="#overview" class="dash-nav-item active" onclick="switchSection('overview')">🏠 Overview</a>
+                <a href="#classes" class="dash-nav-item" onclick="switchSection('classes')">🥊 Classes</a>
+                <a href="#library" class="dash-nav-item" onclick="switchSection('library')">🎥 Library</a>
+                <a href="#payments" class="dash-nav-item" onclick="switchSection('payments')">💳 Payments</a>
+                <a href="#settings" class="dash-nav-item" onclick="switchSection('settings')">⚙️ Settings</a>
+                <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+                <a href="../index.html?msg=logout_success" class="dash-nav-item">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Dashboard -->
+        <main class="dash-main">
+            <!-- SECTION 1: OVERVIEW -->
+            <div id="overview" class="dash-section active">
+                <header style="margin-bottom: 40px;">
+                    <h1 style="font-size: 2.5rem;">Warrior Portal</h1>
+                    <p style="color: var(--text-muted);">Welcome back, <span
+                            style="color: var(--primary-red); font-weight: 700;">Bruce Lee</span></p>
+                </header>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px;">
+                    <div class="stat-card">
+                        <h3 style="margin-bottom: 15px;">Belt Progress</h3>
+                        <div class="belt-progress-viz">
+                            <div class="belt-fill"></div>
+                            <div style="text-align: center; z-index: 2;">
+                                <h2 style="font-size: 3rem; margin: 0;">65%</h2>
+                                <p style="letter-spacing: 2px; font-size: 0.8rem;">TO PURPLE BELT</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h3 style="margin-bottom: 15px;">Weekly Goal</h3>
+                        <div style="padding: 20px; background: #000; border-radius: 10px; border: 1px solid #333;">
+                            <div style="display:flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>Training Hours</span><span>4.5 / 6</span>
+                            </div>
+                            <div style="height: 10px; background: #222; border-radius: 5px;">
+                                <div style="width: 75%; height: 100%; background: var(--accent-gold);"></div>
+                            </div>
+                        </div>
+                        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-muted);">You've attended 3
+                            classes this week. One more to reach your target!</p>
+                    </div>
+                </div>
+
+                <h3>Recent Activity</h3>
+                <div style="background: var(--bg-card); border-radius: 15px; padding: 20px; margin-top: 20px;">
+                    <div class="alert-item"><strong>PROMOTION:</strong> You are eligible for the next stripe evaluation.
+                        Check 🥊 Classes for dates.</div>
+                    <div class="alert-item" style="border-inline-start-color: var(--accent-gold);">
+                        <strong>BILLING:</strong> Next payment scheduled for March 1st.</div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: CLASSES -->
+            <div id="classes" class="dash-section">
+                <h1 style="margin-bottom: 30px;">Class Schedule</h1>
+                <div style="display: grid; gap: 15px;">
+                    <div
+                        style="background: var(--bg-card); padding: 25px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #222;">
+                        <div>
+                            <h4 style="color: var(--primary-red);">BJJ Masterclass (Gi)</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Today • 18:30 - 20:00 • Professor
+                                Tanaka</p>
+                        </div>
+                        <button class="btn btn--primary" style="padding: 10px 20px;">BOOKED</button>
+                    </div>
+                    <div
+                        style="background: var(--bg-card); padding: 25px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #222;">
+                        <div>
+                            <h4 style="color: var(--accent-gold);">Advanced Muay Thai</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Tomorrow • 17:00 - 18:30 • Coach Ram
+                            </p>
+                        </div>
+                        <button class="btn btn--outline" style="padding: 10px 20px;">RESERVE</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: LIBRARY -->
+            <div id="library" class="dash-section">
+                <h1 style="margin-bottom: 10px;">Technique Library</h1>
+                <p style="color: var(--text-muted); margin-bottom: 30px;">Exclusive training videos for your current
+                    rank.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    <div class="video-card">
+                        <img src="https://images.unsplash.com/photo-1552072805-2a9039d00e57?auto=format&fit=crop&q=80&w=800"
+                            alt="BJJ">
+                        <div style="padding: 15px;">
+                            <h4>De La Riva Sweep Basics</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">8 Minutes • Advanced Grappling</p>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=800"
+                            alt="Muay Thai">
+                        <div style="padding: 15px;">
+                            <h4>Effective Switch Kicks</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">12 Minutes • Striking Mechanics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: PAYMENTS -->
+            <div id="payments" class="dash-section">
+                <h1 style="margin-bottom: 30px;">Membership & Payments</h1>
+                <div class="stat-card" style="margin-bottom: 30px;">
+                    <small>Active Plan</small>
+                    <h2 style="margin: 10px 0;">Warrior Elite $149/mo</h2>
+                    <p style="color: #4caf50;">Next charge: March 1st, 2026</p>
+                    <button class="btn btn--outline" style="margin-top: 15px; font-size: 0.8rem;">Change Plan</button>
+                </div>
+                <h3>Payment History</h3>
+                <div
+                    style="background: var(--bg-card); border-radius: 15px; overflow: hidden; margin-top: 15px; border: 1px solid #222;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="background: #111; text-align: left;">
+                            <th style="padding: 15px;">Date</th>
+                            <th style="padding: 15px;">Description</th>
+                            <th style="padding: 15px;">Amount</th>
+                            <th style="padding: 15px;">Invoice</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #222;">
+                            <td style="padding: 15px;">Feb 01, 2026</td>
+                            <td style="padding: 15px;">Monthly Membership</td>
+                            <td style="padding: 15px;">$149.00</td>
+                            <td style="padding: 15px;"><a href="#" style="color: var(--accent-gold);">PDF</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- SECTION 5: SETTINGS -->
+            <div id="settings" class="dash-section">
+                <h1 style="margin-bottom: 30px;">Profile Settings</h1>
+                <div style="background: var(--bg-card); padding: 30px; border-radius: 20px; border: 1px solid #222;">
+                    <form onsubmit="return false;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                            <div>
+                                <label
+                                    style="display:block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 5px;">Display
+                                    Name</label>
+                                <input type="text" value="Bruce Lee"
+                                    style="width:100%; border:1px solid #333; background:#000; padding:12px; color:white; border-radius:8px;">
+                            </div>
+                            <div>
+                                <label
+                                    style="display:block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 5px;">Email
+                                    Address</label>
+                                <input type="email" value="dragon@dojox.com"
+                                    style="width:100%; border:1px solid #333; background:#000; padding:12px; color:white; border-radius:8px;">
+                            </div>
+                        </div>
+                        <button class="btn btn--primary">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function switchSection(id) {
+            // Hide all sections
+            document.querySelectorAll('.dash-section').forEach(s => s.classList.remove('active'));
+            // Show target
+            document.getElementById(id).classList.add('active');
+
+            // Update sidebar nav
+            document.querySelectorAll('.dash-nav-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + id) item.classList.add('active');
+            });
+        }
+
+        // Check hash on load
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && document.getElementById(hash)) switchSection(hash);
+        });
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

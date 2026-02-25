@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing & Membership | DojoX</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥋</text></svg>">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="../assets/css/toast.css">
+
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .price-card {
+            background: var(--bg-card);
+            padding: 50px 30px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid #222;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .price-card.popular {
+            border: 2px solid var(--primary-red);
+            transform: scale(1.05);
+        }
+
+        .price-card.popular::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-red);
+            padding: 5px 15px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid #222;
+            text-align: center;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="header__logo">DOJO<span>X</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="home-2.html">Modern</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dashboard-student.html">Student</a></li>
+                <li><a href="dashboard-admin.html">Admin</a></li>
+                <li class="mobile-only"><a href="../index.html?msg=logout_success">Logout</a></li>
+            </ul>
+            <div class="controls">
+                <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+                <button id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+                <a href="login.html" class="btn btn--outline"
+                    style="padding: 8px 15px; font-size: 0.75rem; border-color: var(--accent-gold); color: var(--accent-gold);">PORTAL</a>
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECTION 1: ENROLLMENT HERO -->
+        <section class="section"
+            style="padding-top: 150px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('../assets/images/banner2.webp') center/cover; text-align: center;">
+            <div class="container">
+                <h1 style="font-size: clamp(3rem, 10vw, 5.5rem); font-weight: 900;">INVEST IN <span
+                        style="color: var(--primary-red);">YOURSELF</span></h1>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 20px auto;">Transparent pricing with
+                    no hidden fees. Choose the path that fits your goals.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: MEMBERSHIP CARDS -->
+        <section class="section container">
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Basic Pack</h3>
+                    <div style="font-size: 3rem; font-weight: 900; margin: 20px 0;">$89<small
+                            style="font-size: 1rem; color: var(--text-muted);">/mo</small></div>
+                    <ul style="margin-bottom: 30px; text-align: left; display: inline-block;">
+                        <li>• 2 Classes per week</li>
+                        <li>• Access to Locker Room</li>
+                        <li>• Digital Belt Tracker</li>
+                    </ul>
+                    <a href="#" class="btn btn--outline" style="width: 100%;">Select Plan</a>
+                </div>
+                <div class="price-card popular">
+                    <h3>Warrior Elite</h3>
+                    <div style="font-size: 3rem; font-weight: 900; margin: 20px 0;">$149<small
+                            style="font-size: 1rem; color: var(--text-muted);">/mo</small></div>
+                    <ul style="margin-bottom: 30px; text-align: left; display: inline-block;">
+                        <li>• Unlimited Classes</li>
+                        <li>• All Open Mat Sessions</li>
+                        <li>• 1 Seminar Monthly</li>
+                        <li>• Guest Passes (2/mo)</li>
+                    </ul>
+                    <a href="#" class="btn btn--primary" style="width: 100%;">Get Started</a>
+                </div>
+                <div class="price-card">
+                    <h3>Pro Annual</h3>
+                    <div style="font-size: 3rem; font-weight: 900; margin: 20px 0;">$1299<small
+                            style="font-size: 1rem; color: var(--text-muted);">/yr</small></div>
+                    <ul style="margin-bottom: 30px; text-align: left; display: inline-block;">
+                        <li>• Unlimited + No-Gi</li>
+                        <li>• Free DojoX Scrim Shirt</li>
+                        <li>• 20% Off Seminars</li>
+                    </ul>
+                    <a href="#" class="btn btn--outline" style="width: 100%;">Select Plan</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: COMPARISON MATRIX -->
+        <section class="section container" style="overflow-x: auto;">
+            <h2 style="text-align: center; margin-bottom: 40px;">Compare Features</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Feature</th>
+                        <th>Basic</th>
+                        <th>Warrior</th>
+                        <th>Annual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: left;">Class Access</td>
+                        <td>8/mo</td>
+                        <td>Unlimited</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Online Library</td>
+                        <td>Partial</td>
+                        <td>Full</td>
+                        <td>Full</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Guest Passes</td>
+                        <td>✖</td>
+                        <td>2/mo</td>
+                        <td>5/mo</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Belt Reviews</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION 4: PRIVATE COACHING -->
+        <section class="section" style="background: var(--bg-card);">
+            <div class="container"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; align-items: center;">
+                <div>
+                    <h2>Private Coaching</h2>
+                    <p style="color: var(--text-secondary); margin: 20px 0;">Accelerate your progress with 1-on-1
+                        sessions. Tailored specifically to your technical gaps and physical conditioning.</p>
+                    <div style="font-weight: 700; font-size: 1.5rem; color: var(--accent-gold);">$80 / SESSION</div>
+                    <a href="contact.html" class="btn btn--outline" style="margin-top: 25px;">Inquire Session</a>
+                </div>
+                <img src="https://images.unsplash.com/photo-1552072092-2f9b13240955?auto=format&fit=crop&q=80&w=600"
+                    style="width: 100%; border-radius: 20px;">
+            </div>
+        </section>
+
+        <!-- SECTION 5: CORPORATE/FAMILY DEALS -->
+        <section class="section container" style="text-align: center;">
+            <div style="background: var(--primary-red); padding: 60px; border-radius: 40px; color: white;">
+                <h2>Family & Corporate Packs</h2>
+                <p style="margin: 20px auto 35px; max-width: 600px;">Training together builds stronger bonds. Save up to
+                    30% when you enroll with family or as a corporate group of 5+.</p>
+                <a href="contact.html" class="btn btn--accent">Get Custom Quote</a>
+            </div>
+        </section>
+
+        <!-- SECTION 6: BILLING FAQ -->
+        <section class="section container" style="max-width: 800px;">
+            <h2 style="text-align: center; margin-bottom: 40px;">Common Questions</h2>
+            <div class="faq-item">
+                <strong>Can I cancel anytime?</strong>
+                <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">Yes, for monthly plans, you
+                    can cancel with 15 days' notice before the next billing cycle.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Is there an initiation fee?</strong>
+                <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">We have a one-time $49
+                    registration fee which includes your first DojoX T-shirt and white belt.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 7: SECURE CHECKOUT FOOTER -->
+        <section class="section" style="background: #000; text-align: center;">
+            <div class="container">
+                <p style="color: var(--text-muted); margin-bottom: 20px;">SECURE PAYMENTS HANDLED BY</p>
+                <div style="display: flex; gap: 30px; justify-content: center; opacity: 0.5;">
+                    <span style="font-weight: 900;">STRIPE</span>
+                    <span style="font-weight: 900;">PAYPAL</span>
+                    <span style="font-weight: 900;">APPLE PAY</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="section" style="background: #000; text-align: center; border-top: 1px solid #222;">
+        <div class="container">
+            <a href="../index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
+            <p style="color: var(--text-muted); margin: 20px 0;">123 Warrior Way, Tokyo, Japan • Precision. Discipline.
+                Respect.</p>
+            <div
+                style="display: flex; justify-content: center; gap: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Support</a>
+                <a href="dashboard-admin.html">Admin</a>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.75rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS
+                RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

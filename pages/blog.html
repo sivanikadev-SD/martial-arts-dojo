@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Journal - Insights | DojoX</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥋</text></svg>">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="../assets/css/toast.css">
+
+    <style>
+        .blog-featured {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            background: var(--bg-card);
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .post-card {
+            background: #111;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #222;
+        }
+
+        .cat-tag {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #222;
+            font-size: 0.7rem;
+            border-radius: 5px;
+            color: var(--primary-red);
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 1024px) {
+            .blog-featured {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="header__logo">DOJO<span>X</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="home-2.html">Modern</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dashboard-student.html">Student</a></li>
+                <li><a href="dashboard-admin.html">Admin</a></li>
+                <li class="mobile-only"><a href="../index.html?msg=logout_success">Logout</a></li>
+            </ul>
+            <div class="controls">
+                <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+                <button id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+                <a href="login.html" class="btn btn--outline"
+                    style="padding: 8px 15px; font-size: 0.75rem; border-color: var(--accent-gold); color: var(--accent-gold);">PORTAL</a>
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- BANNER HERO -->
+        <section class="section"
+            style="padding-top: 150px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('../assets/images/banner2.webp') center/cover; text-align: center;">
+            <div class="container">
+                <span style="color: var(--accent-gold); font-weight: 700; letter-spacing: 3px;">DOJO JOURNAL</span>
+                <h1 style="font-size: clamp(3rem, 8vw, 5rem); margin-top: 15px; color: var(--text-primary);">Insights &amp;
+                    <span style="color: var(--primary-red);">Training</span>
+                </h1>
+                <p style="max-width: 700px; margin: 20px auto; color: rgba(255,255,255,0.8);">Expert articles on
+                    technique, conditioning, recovery, and the warrior mindset from our world-class senseis.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 1: FEATURED POST -->
+        <section class="section container">
+            <div class="blog-featured">
+                <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=800"
+                    style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="padding: 40px;">
+                    <span class="cat-tag">FEATURED</span>
+                    <h2 style="font-size: 2.25rem; margin-bottom: 20px; color: var(--text-primary);">Mastering Recovery:
+                        The Grappler's Guide</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 30px;">How elite athletes handle the physical
+                        demands of high-intensity training. Nutrition, sleep models, and active mobility.</p>
+                    <a href="#" class="btn btn--primary">Read Article</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CATEGORY NAVIGATION -->
+        <section class="container" style="margin-bottom: 50px;">
+            <div
+                style="display: flex; gap: 20px; border-bottom: 1px solid #222; padding-bottom: 15px; overflow-x: auto;">
+                <a href="#" style="color: var(--primary-red); font-weight: 700;">ALL POSTS</a>
+                <a href="#" style="color: var(--text-muted);">TECHNIQUE</a>
+                <a href="#" style="color: var(--text-muted);">CONDITIONING</a>
+                <a href="#" style="color: var(--text-muted);">DOJO NEWS</a>
+                <a href="#" style="color: var(--text-muted);">RECOVERY</a>
+                <a href="#" style="color: var(--text-muted);">MINDSET</a>
+            </div>
+        </section>
+
+        <!-- SECTION 3: TRAINING TIPS GRID -->
+        <section class="section container">
+            <div class="blog-grid">
+                <div class="post-card">
+                    <img src="../assets/images/belt.webp" style="width: 100%; aspect-ratio: 1.5/1; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <span class="cat-tag">TECHNIQUE</span>
+                        <h4 style="color: var(--text-primary);">5 Drills for a Faster Jab</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">Speed over power
+                            in
+                            the initial striking phases. Learn how to develop explosive hand speed with these proven
+                            training methods.</p>
+                    </div>
+                </div>
+                <div class="post-card">
+                    <img src="../assets/images/kids-class-img-row-1-640w.webp"
+                        style="width: 100%; aspect-ratio: 1.5/1; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <span class="cat-tag">CONDITIONING</span>
+                        <h4 style="color: var(--text-primary);">Kettlebell for Fighters</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">Functional
+                            strength
+                            for clinch control. Build grip endurance and explosive power with these fighter-specific
+                            routines.</p>
+                    </div>
+                </div>
+                <div class="post-card">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=400"
+                        style="width: 100%; aspect-ratio: 1.5/1; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <span class="cat-tag">DOJO NEWS</span>
+                        <h4 style="color: var(--text-primary);">Winter Grading Results</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">Celebrating our
+                            newest
+                            blue and purple belts. 23 students achieved promotion this season — a new dojo record.</p>
+                    </div>
+                </div>
+                <div class="post-card">
+                    <img src="../assets/images/master2.webp"
+                        style="width: 100%; aspect-ratio: 1.5/1; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <span class="cat-tag">MINDSET</span>
+                        <h4 style="color: var(--text-primary);">Meditation for Martial Artists</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">How daily
+                            mindfulness
+                            practice sharpens focus, reduces competition anxiety, and accelerates technical learning.
+                        </p>
+                    </div>
+                </div>
+                <div class="post-card">
+                    <img src="../assets/images/instractor1.webp"
+                        style="width: 100%; aspect-ratio: 1.5/1; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <span class="cat-tag">TECHNIQUE</span>
+                        <h4 style="color: var(--text-primary);">Guard Passing Masterclass</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">Master Hiroshi
+                            breaks down
+                            three pressure-passing sequences that dominate at the highest levels of BJJ competition.</p>
+                    </div>
+                </div>
+                <div class="post-card">
+                    <img src="../assets/images/class.webp" style="width: 100%; aspect-ratio: 1.5/1; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <span class="cat-tag">RECOVERY</span>
+                        <h4 style="color: var(--text-primary);">Fighter's Nutrition Guide</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">Optimal meal
+                            timing, macros,
+                            and hydration strategies for fighters during training camp and competition week.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: COMMUNITY SPOTLIGHT -->
+        <section class="section" style="background: var(--bg-card);">
+            <div class="container"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
+                <div>
+                    <h2>Student of the Month</h2>
+                    <blockquote style="margin: 20px 0; font-style: italic; color: var(--text-secondary);">
+                        "Joining DojoX wasn't just about learning to fight; it was about finding common ground with
+                        people striving for the same perfection."
+                    </blockquote>
+                    <strong>— Samantha Reed, Purple Belt</strong>
+                </div>
+                <img src="../assets/images/Kids-Class-IMG-row-1-640w.webp" style="width: 100%; border-radius: 20px;">
+            </div>
+        </section>
+
+        <!-- SECTION 5: RESEARCH POST -->
+        <section class="section container">
+            <div style=" padding: 60px; border-radius: 40px; border: 1px solid var(--primary-red);">
+                <span class="cat-tag">SCIENCE</span>
+                <h3>The Biomechanics of the Roundhouse Kick</h3>
+                <p style="color: var(--text-secondary); margin: 20px 0;">A deep dive into the physics of striking. How
+                    pivot point and pelvic engagement maximize PSI upon impact.</p>
+                <a href="#" style="color: var(--accent-gold); font-weight: 700;">READ RESEARCH SUMMARY →</a>
+            </div>
+        </section>
+
+        <!-- SECTION 6: NEWSLETTER SIGN-UP -->
+        <section class="section" style="background: var(--primary-red); color: white; text-align: center;">
+            <div class="container">
+                <h2>Inside the Dojo</h2>
+                <p style="margin: 20px 0 30px;">Get technical breakdowns and lifestyle tips delivered weekly.</p>
+                <form onsubmit="return false;"
+                    style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+                    <input type="email" placeholder="Your warrior email"
+                        style="flex:1; padding: 15px; border-radius: 8px; border: none;">
+                    <button class="btn btn--accent">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECTION 7: SOCIAL WALL -->
+        <section class="section container">
+            <h2 style="text-align: center; margin-bottom: 40px;">#DOJOXLIFE</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px;">
+                <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=300"
+                    style="width: 100%; aspect-ratio: 1; object-fit: cover; opacity: 0.6;">
+                <img src="../assets/images/class.webp"
+                    style="width: 100%; aspect-ratio: 1; object-fit: cover; opacity: 0.6;">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=300"
+                    style="width: 100%; aspect-ratio: 1; object-fit: cover; opacity: 0.6;">
+                <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=300"
+                    style="width: 100%; aspect-ratio: 1; object-fit: cover; opacity: 0.6;">
+                <img src="../assets/images/about(1).webp"
+                    style="width: 100%; aspect-ratio: 1; object-fit: cover; opacity: 0.6;">
+            </div>
+        </section>
+    </main>
+
+    <footer class="section" style="background: #000; text-align: center; border-top: 1px solid #222;">
+        <div class="container">
+            <a href="../index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
+            <p style="color: var(--text-muted); margin: 20px 0;">123 Warrior Way, Tokyo, Japan • Precision. Discipline.
+                Respect.</p>
+            <div
+                style="display: flex; justify-content: center; gap: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Support</a>
+                <a href="dashboard-admin.html">Admin</a>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.75rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS
+                RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

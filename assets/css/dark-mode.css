@@ -1,0 +1,128 @@
+/* 
+  Martial Arts Dojo - Light Mode Overrides
+  Triggered when [data-theme="light"] is set
+*/
+
+[data-theme="light"] {
+    --bg-main: #f5f5f5;
+    --bg-card: #ffffff;
+    --text-primary: #121212;
+    --text-secondary: #444444;
+    --text-muted: #888888;
+    --secondary-charcoal: #e0e0e0;
+}
+
+/* Force header background in light mode to prevent invisible text on dark heroes */
+[data-theme="light"] .header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
+}
+
+/* Fix for the white block behind nav links in desktop view */
+[data-theme="light"] .nav-links {
+    background: transparent;
+}
+
+/* Mobile menu still needs the background */
+@media (max-width: 1024px) {
+    [data-theme="light"] .nav-links {
+        background: #ffffff;
+    }
+}
+
+[data-theme="light"] .header--scrolled {
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .btn--outline {
+    border-color: #121212;
+    color: #121212;
+}
+
+/* Improve toggle visibility in light mode */
+[data-theme="light"] #theme-toggle,
+[data-theme="light"] #rtl-toggle {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #121212;
+}
+
+[data-theme="light"] #theme-toggle:hover,
+[data-theme="light"] #rtl-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .info-box,
+[data-theme="light"] .stat-card,
+[data-theme="light"] .post-card,
+[data-theme="light"] .price-card {
+    border-color: #ddd;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .ticker-track span {
+    color: white;
+}
+
+/* Ensure sections/footers that are normally black become white/light in light mode if needed */
+[data-theme="light"] section[style*="background: #000"],
+[data-theme="light"] section[style*="background: var(--primary-black)"],
+[data-theme="light"] footer[style*="background: #000"],
+[data-theme="light"] footer[style*="background: var(--primary-black)"] {
+    background: var(--bg-main) !important;
+    color: var(--text-primary) !important;
+}
+
+[data-theme="light"] section[style*="background: #000"] h1,
+[data-theme="light"] section[style*="background: #000"] h2,
+[data-theme="light"] section[style*="background: #000"] p,
+[data-theme="light"] footer[style*="background: #000"] p,
+[data-theme="light"] footer[style*="background: #000"] .header__logo {
+    color: var(--text-primary) !important;
+}
+
+/* Keep white text on dark-overlay hero/banner sections in light mode */
+[data-theme="light"] .hero,
+[data-theme="light"] .split-hero__info,
+[data-theme="light"] section[style*="padding-top: 150px"] {
+    color: #ffffff !important;
+}
+
+[data-theme="light"] .hero h1,
+[data-theme="light"] .hero p,
+[data-theme="light"] .hero span,
+[data-theme="light"] .split-hero__info h1,
+[data-theme="light"] .split-hero__info p,
+[data-theme="light"] .split-hero__info span,
+[data-theme="light"] section[style*="padding-top: 150px"] h1,
+[data-theme="light"] section[style*="padding-top: 150px"] p,
+[data-theme="light"] section[style*="padding-top: 150px"] span {
+    color: #ffffff !important;
+}
+
+[data-theme="light"] section[style*="padding-top: 150px"] h1 span[style*="primary-red"],
+[data-theme="light"] .hero h1 span[style*="primary-red"] {
+    color: var(--primary-red) !important;
+}
+
+[data-theme="light"] section[style*="padding-top: 150px"] h1 span[style*="accent-gold"],
+[data-theme="light"] .hero span[style*="accent-gold"] {
+    color: var(--accent-gold) !important;
+}
+
+/* Blog post cards stay dark in light mode */
+[data-theme="light"] .post-card {
+    background: #ffffff;
+    border-color: #ddd;
+}
+
+[data-theme="light"] .post-card h4,
+[data-theme="light"] .post-card h3 {
+    color: #121212;
+}
+
+[data-theme="light"] .cat-tag {
+    background: #f0f0f0;
+}

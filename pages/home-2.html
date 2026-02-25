@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Warrior - Home 2 | DojoX</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥋</text></svg>">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="../assets/css/toast.css">
+
+    <style>
+        /* Home 2 Specific Layout Styles */
+        .split-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+            background: #080808;
+        }
+
+        .split-hero__info {
+            padding: 15% var(--spacing-6) 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .split-hero__media {
+            background: url('https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+            position: relative;
+        }
+
+        .split-hero__media::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #080808 0%, transparent 50%);
+        }
+
+        /* 2. Stats Ticker */
+        .stats-ticker {
+            background: var(--primary-red);
+            padding: var(--spacing-4) 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-track {
+            display: inline-flex;
+            gap: 100px;
+            animation: ticker 20s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* 3. Dynamic Schedule */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-4);
+        }
+
+        /* 4. Community Events */
+        .event-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        /* 5. Video Hub */
+        .video-box {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 1024px) {
+            .split-hero {
+                grid-template-columns: 1fr;
+            }
+
+            .split-hero__media {
+                height: 40vh;
+                order: -1;
+            }
+
+            .split-hero__media::after {
+                background: linear-gradient(0deg, #080808 0%, transparent 50%);
+            }
+
+            .split-hero__info {
+                padding: var(--spacing-6);
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="header__logo">DOJO<span>X</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="home-2.html" class="active">Modern</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dashboard-student.html">Student</a></li>
+                <li><a href="dashboard-admin.html">Admin</a></li>
+                <li class="mobile-only"><a href="../index.html?msg=logout_success">Logout</a></li>
+            </ul>
+            <div class="controls">
+                <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+                <button id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+                <a href="login.html" class="btn btn--outline"
+                    style="padding: 8px 15px; font-size: 0.75rem; border-color: var(--accent-gold); color: var(--accent-gold);">PORTAL</a>
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECTION 1: MODERN SPLIT HERO -->
+        <section class="split-hero">
+            <div class="split-hero__info">
+                <span style="color: var(--accent-neon); font-weight: 700; letter-spacing: 2px;">THE FUTURE OF
+                    COMBAT</span>
+                <h1
+                    style="font-size: clamp(3.5rem, 12vw, 7rem); margin: 10px 0 25px; line-height: 0.8; font-weight: 900; color: #ffffff;">
+                    NEXT<br><span style="color: var(--primary-red);">LEVEL</span></h1>
+                <p style="color: rgba(255,255,255,0.8); max-width: 500px; margin-bottom: 30px;">High-performance
+                    coaching integrated with data-driven progress tracking. Evolve your game at DojoX Modern.</p>
+                <div style="display: flex; gap: 15px; justify-content: inherit;">
+                    <a href="pricing.html" class="btn btn--primary">Get Membership</a>
+                    <a href="programs.html" class="btn btn--outline"
+                        style="border-color: rgba(255,255,255,0.5); color: #ffffff;">Explore Tech</a>
+                </div>
+            </div>
+            <div class="split-hero__media"></div>
+        </section>
+
+        <!-- SECTION 2: STATS TICKER -->
+        <section class="stats-ticker">
+            <div class="ticker-track">
+                <span style="font-weight: 900; font-size: 1.5rem;">• 1.2K+ ACTIVE WARRIORS </span>
+                <span style="font-weight: 900; font-size: 1.5rem;">• 42 WORLD CHAMPIONSHIPS </span>
+                <span style="font-weight: 900; font-size: 1.5rem;">• 24/7 FACILITY ACCESS </span>
+                <span style="font-weight: 900; font-size: 1.5rem;">• 15+ ELITE SENSEIS </span>
+                <!-- Duplicate for loop -->
+                <span style="font-weight: 900; font-size: 1.5rem;">• 1.2K+ ACTIVE WARRIORS </span>
+                <span style="font-weight: 900; font-size: 1.5rem;">• 42 WORLD CHAMPIONSHIPS </span>
+            </div>
+        </section>
+
+        <!-- SECTION 3: DYNAMIC SCHEDULE -->
+        <section class="section container">
+            <div
+                style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 20px;">
+                <div>
+                    <h2 style="font-size: 2.5rem;">Real-Time Schedule</h2>
+                    <p style="color: var(--text-secondary);">Today's high-performance sessions.</p>
+                </div>
+                <a href="#" class="btn btn--accent">Full Calendar</a>
+            </div>
+            <div class="schedule-grid">
+                <div
+                    style="background: var(--bg-card); padding: 30px; border-radius: var(--radius-md); border-top: 5px solid var(--accent-neon);">
+                    <h4 style="color: var(--accent-neon);">06:00 AM</h4>
+                    <h3>Morning MMA</h3>
+                    <p style="color: var(--text-muted); margin-top: 5px;">Advanced Competition</p>
+                </div>
+                <div
+                    style="background: var(--bg-card); padding: 30px; border-radius: var(--radius-md); border-top: 5px solid var(--primary-red);">
+                    <h4 style="color: var(--primary-red);">05:30 PM</h4>
+                    <h3>BJJ Fundamentals</h3>
+                    <p style="color: var(--text-muted); margin-top: 5px;">Adults Only</p>
+                </div>
+                <div
+                    style="background: var(--bg-card); padding: 30px; border-radius: var(--radius-md); border-top: 5px solid var(--accent-gold);">
+                    <h4 style="color: var(--accent-gold);">07:00 PM</h4>
+                    <h3>Muay Thai Power</h3>
+                    <p style="color: var(--text-muted); margin-top: 5px;">All Levels Welcome</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: COMMUNITY EVENTS -->
+        <section class="section" style="background: #000;">
+            <div class="container"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                <div>
+                    <h2 style="margin-bottom: 20px;">Dojo Community</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 30px;">We are more than an academy. We are a
+                        family of athletes pushing for excellence.</p>
+                    <div class="event-card">
+                        <div
+                            style="background: #222; padding: 10px; border-radius: 8px; text-align: center; min-width: 60px;">
+                            <span style="display: block; font-weight: 700;">24</span>
+                            <small style="color: var(--primary-red); font-weight: 700;">FEB</small>
+                        </div>
+                        <div>
+                            <h4>Seminar: Leg Locks 101</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Guest: Master Silva</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 style="margin-bottom: 20px;">Success Stories</h2>
+                    <div style="background: var(--bg-card); padding: 30px; border-radius: var(--radius-lg);">
+                        <p style="font-style: italic; color: var(--text-secondary);">"The technical depth here is unlike
+                            anything I've seen. The tech integration makes tracking progress effortless."</p>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-top: 20px;">
+                            <img src="https://ui-avatars.com/api/?name=Mark+Z&background=444"
+                                style="width: 50px; border-radius: 50%;">
+                            <div>
+                                <strong>Mark Zeller</strong>
+                                <small style="display: block; color: var(--text-muted);">Executive Member</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: VIDEO TRAINING HUB -->
+        <section class="section container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2>Digital Mastery</h2>
+                <p style="color: var(--text-secondary);">Access our online technique library 24/7.</p>
+            </div>
+            <div class="video-box">
+                <img src="https://images.unsplash.com/photo-1590483734724-383b85373172?auto=format&fit=crop&q=80&w=1200"
+                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;">
+                <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+                    <button
+                        style="width: 100px; height: 100px; border-radius: 50%; background: var(--primary-red); color: white; font-size: 2.5rem; transition: transform 0.3s ease;">▶</button>
+                </div>
+                <div
+                    style="position: absolute; bottom: 30px; left: 30px; right: 30px; background: rgba(0,0,0,0.8); padding: 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(10px);">
+                    <div>
+                        <h4 style="color: var(--accent-neon);">NOW STREAMING</h4>
+                        <p style="color: #ffffff;">Weekly Recap: Transition to Back Control</p>
+                    </div>
+                    <a href="#" class="btn btn--outline"
+                        style="font-size: 0.8rem; border-color: rgba(255,255,255,0.5); color: #ffffff;">Explore
+                        Library</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: SUCCESS STORIES GRID -->
+        <section class="section container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span style="color: var(--primary-red); font-weight: 700;">CHAMPIONSHIP CULTURE</span>
+                <h2 style="font-size: 2.5rem;">Results that Speak</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <img src="../assets/images/instractor.webp"
+                    style="width: 100%; border-radius: 15px; filter: grayscale(100%); transition: 0.5s; height: 400px;">
+                <img src="../assets/images/class.webp"
+                    style="width: 100%; border-radius: 15px; filter: grayscale(100%); transition: 0.5s; height: 400px;">
+                <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=800"
+                    style="width: 100%; border-radius: 15px; filter: grayscale(100%); transition: 0.5s; height: 400px;">
+            </div>
+        </section>
+
+        <!-- SECTION 7: SUBSCRIPTION SECTION -->
+        <section class="section" style="background: var(--bg-card); border-top: 1px solid #333;">
+            <div class="container" style="text-align: center; max-width: 600px;">
+                <h2 style="margin-bottom: 15px;">Elite Access</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 30px;">Subscribe to our newsletter for exclusive
+                    technical breakdowns and seminar priority booking.</p>
+                <form class="subscription-form" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <input type="email" placeholder="Your Email Address"
+                        style="flex: 1; padding: 15px; background: #000; border: 1px solid #333; border-radius: 8px; color: white;"
+                        required>
+                    <button class="btn btn--accent" style="white-space: nowrap;">JOIN REVOLUTION</button>
+                </form>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 15px;">No spam. Just technical
+                    excellence. OSS.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="section" style="background: #000; text-align: center; border-top: 1px solid #222;">
+        <div class="container">
+            <a href="../index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
+            <p style="color: var(--text-muted); margin: 20px 0;">123 Warrior Way, Tokyo, Japan • Precision. Discipline.
+                Respect.</p>
+            <div
+                style="display: flex; justify-content: center; gap: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Support</a>
+                <a href="dashboard-admin.html">Admin</a>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.75rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS
+                RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

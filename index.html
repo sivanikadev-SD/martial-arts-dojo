@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martial Arts Dojo - Home 1 | DojoX</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥋</text></svg>">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/toast.css">
+
+    <style>
+        /* Home 1 Specific Layout Styles */
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-6);
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: var(--spacing-2);
+        }
+
+        .section-header .sub {
+            color: var(--primary-red);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+        }
+
+        /* 1. Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/images/banner.webp') no-repeat center center/cover;
+            text-align: center;
+        }
+
+        /* 2. Welcome/History */
+        .welcome-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: var(--spacing-6);
+            align-items: center;
+        }
+
+        /* 3. Programs Matrix */
+        .programs-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-4);
+        }
+
+        /* 4. Belt Promo */
+        .belt-promo {
+            background: var(--bg-card);
+            padding: var(--spacing-6);
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* 5. Senseis */
+        .sensei-small-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-5);
+        }
+
+        /* 6. Testimonials Wall */
+        .testi-wall {
+            column-count: 3;
+            column-gap: var(--spacing-4);
+        }
+
+        @media (max-width: 1024px) {
+            .testi-wall {
+                column-count: 2;
+            }
+
+            .welcome-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-5);
+                /* Increased gap for better separation */
+            }
+        }
+
+        @media (max-width: 640px) {
+            .testi-wall {
+                column-count: 1;
+            }
+
+            .programs-matrix {
+                gap: var(--spacing-3);
+            }
+
+            .sensei-small-grid {
+                gap: var(--spacing-3);
+            }
+        }
+
+        /* 7. Final CTA */
+        .final-cta {
+            background: var(--primary-red);
+            color: white;
+            text-align: center;
+            padding: var(--spacing-7) 0;
+        }
+
+        .testi-card {
+            break-inside: avoid;
+            background: var(--bg-card);
+            padding: var(--spacing-4);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-4);
+            border-left: 3px solid var(--primary-red);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="header__logo">DOJO<span>X</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pages/home-2.html">Modern</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="pages/programs.html">Programs</a></li>
+                <li><a href="pages/instructors.html">Instructors</a></li>
+                <li><a href="pages/pricing.html">Pricing</a></li>
+                <li><a href="pages/blog.html">Blog</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+                <li><a href="pages/dashboard-student.html">Student</a></li>
+                <li><a href="pages/dashboard-admin.html">Admin</a></li>
+                <li class="mobile-only"><a href="index.html?msg=logout_success">Logout</a></li>
+            </ul>
+            <div class="controls">
+                <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+                <button id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+                <a href="pages/login.html" class="btn btn--outline"
+                    style="padding: 8px 15px; font-size: 0.75rem; border-color: var(--accent-gold); color: var(--accent-gold);">PORTAL</a>
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECTION 1: HERO -->
+        <section class="hero">
+            <div class="container hero__content">
+                <span
+                    style="color: var(--accent-gold); letter-spacing: 4px; font-weight: 700; text-transform: uppercase;">Est.
+                    2010 • Professional Dojo</span>
+                <h1
+                    style="font-size: clamp(3rem, 10vw, 6rem); margin: 10px 0 20px; font-weight: 900; line-height: 0.9;">
+                    TRAIN HARD.<br><span
+                        style="-webkit-text-stroke: 2px white; color: transparent;">STAY
+                        HUMBLE.</span></h1>
+                <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 30px; color: rgba(255,255,255,0.85);">
+                    Master the arts of discipline, respect, and technical perfection at DojoX Academy.</p>
+                <div class="hero__ctas">
+                    <a href="pages/pricing.html" class="btn btn--primary">Register Now</a>
+                    <a href="#about" class="btn btn--outline" style="margin-inline-start: 10px;">Our Philosophy</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: WELCOME INTRO -->
+        <section class="section container" id="about">
+            <div class="welcome-grid">
+                <div style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=800"
+                        alt="Dojo Entrance"
+                        style="width: 100%; border-radius: var(--radius-lg); filter: saturate(0.5);">
+                    <div
+                        style="position: absolute; bottom: -20px; right: -20px; background: var(--primary-red); color: white; padding: 20px; border-radius: var(--radius-md); font-weight: 900;">
+                        14+ YEARS</div>
+                </div>
+                <div>
+                    <span style="color: var(--primary-red); font-weight: 700;">WELCOME TO THE JOURNEY</span>
+                    <h2 style="margin: 10px 0 20px; font-size: 2.5rem;">The Most Prestigious <br>Academy in Tokyo</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">Founded on traditional values and
+                        powered by modern athletic science, DojoX provides an unparalleled environment for growth. We
+                        don't just teach techniques; we build character.</p>
+                    <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <li>🥋 Professional Mat Areas</li>
+                        <li>🏆 Competitive Program</li>
+                        <li>🧘 Meditation Space</li>
+                        <li>🤝 Community Focused</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PROGRAMS MATRIX -->
+        <section class="section" style="background: var(--secondary-charcoal);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub">Curriculum</span>
+                    <h2>Elite Programs</h2>
+                </div>
+                <div class="programs-matrix">
+                    <div class="program-card">
+                        <img src="assets/images/pose1.webp"
+                            alt="Karate" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 20px;">
+                            <h3>Traditional Karate</h3>
+                            <p style="color: var(--text-secondary); margin: 10px 0;">Shotokan excellence for all ages.
+                            </p>
+                            <a href="pages/programs.html" class="btn btn--outline"
+                                style="width: 100%; font-size: 0.8rem;">Explore</a>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=600"
+                            alt="BJJ" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 20px;">
+                            <h3>Jiu-Jitsu (BJJ)</h3>
+                            <p style="color: var(--text-secondary); margin: 10px 0;">The science of leverage and
+                                grappling.</p>
+                            <a href="pages/programs.html" class="btn btn--outline"
+                                style="width: 100%; font-size: 0.8rem;">Explore</a>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <img src="assets/images/about(1).webp"
+                            alt="Muay Thai" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 20px;">
+                            <h3>Muay Thai</h3>
+                            <p style="color: var(--text-secondary); margin: 10px 0;">Striking education for peak
+                                fitness.</p>
+                            <a href="pages/programs.html" class="btn btn--outline"
+                                style="width: 100%; font-size: 0.8rem;">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: BELT PROGRESS PROMO -->
+        <section class="section container">
+            <div class="belt-promo">
+                <span class="sub">Interactive Tracking</span>
+                <h2>Track Your Belt Progress</h2>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 15px 0 30px;">Every member gets access
+                    to our digital portal. Track your attendance, master new techniques, and watch your rank grow in
+                    real-time.</p>
+                <div
+                    style="width: 100%; max-width: 400px; background: #333; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px;">
+                    <div style="width: 65%; height: 100%; background: var(--primary-red);"></div>
+                </div>
+                <p style="font-weight: 700; color: var(--accent-gold);">65% TO PURPLE BELT</p>
+                <a href="pages/dashboard-student.html" class="btn btn--accent" style="margin-top: 20px;">Enter Portal</a>
+            </div>
+        </section>
+
+        <!-- SECTION 5: SENSEI HIGHLIGHTS -->
+        <section class="section" style="background: var(--bg-card);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub">Expertise</span>
+                    <h2>Meet the Masters</h2>
+                </div>
+                <div class="sensei-small-grid">
+                    <div style="text-align: center;">
+                        <img src="https://ui-avatars.com/api/?name=Hiroshi+T&background=D32F2F&color=fff&size=150"
+                            style="border-radius: 50%; margin-bottom: 15px;">
+                        <h4>Master Hiroshi</h4>
+                        <small style="color: var(--text-muted);">BJJ 6th Degree</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+K&background=D32F2F&color=fff&size=150"
+                            style="border-radius: 50%; margin-bottom: 15px;">
+                        <h4>Coach Sarah</h4>
+                        <small style="color: var(--text-muted);">Muay Thai World Champ</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="https://ui-avatars.com/api/?name=Ken+W&background=D32F2F&color=fff&size=150"
+                            style="border-radius: 50%; margin-bottom: 15px;">
+                        <h4>Sensei Ken</h4>
+                        <small style="color: var(--text-muted);">Karate Shotokan</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: TESTIMONIALS WALL -->
+        <section class="section container">
+            <div class="section-header">
+                <span class="sub">Community</span>
+                <h2>Warrior Stories</h2>
+            </div>
+            <div class="testi-wall">
+                <div class="testi-card">
+                    <p>"DojoX changed my life. The discipline learned here reflects in my career every day."</p>
+                    <small>— James R., Blue Belt</small>
+                </div>
+                <div class="testi-card">
+                    <p>"Best environment for kids. My son has gained so much confidence."</p>
+                    <small>— Emily T., Parent</small>
+                </div>
+                <div class="testi-card">
+                    <p>"Technical instruction is top-tier. Professional yet welcoming."</p>
+                    <small>— Marcus K., Pro MMA</small>
+                </div>
+                <div class="testi-card">
+                    <p>"The community here is like family. Highly recommend."</p>
+                    <small>— Sarah L., Kickboxing</small>
+                </div>
+                <div class="testi-card">
+                    <p>"Clean facility and world-class equipment. Truly elite."</p>
+                    <small>— David O., Visitor</small>
+                </div>
+                <div class="testi-card">
+                    <p>"From zero experience to my first stripes. The journey is worth it."</p>
+                    <small>— Alex M., White Belt</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: FINAL JOIN CTA -->
+        <section class="final-cta">
+            <div class="container">
+                <h2 style="font-size: 3rem; margin-bottom: 20px;">Ready to Step on the Mat?</h2>
+                <p style="font-size: 1.25rem; margin-bottom: 30px; opacity: 0.9;">Claim your 1-week free trial today and
+                    join the DojoX family.</p>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="pages/pricing.html" class="btn btn--accent">Start Registration</a>
+                    <a href="pages/contact.html" class="btn btn--outline" style="border-color: white; color: white;">Contact
+                        Support</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="section" style="background: #000; text-align: center; border-top: 1px solid #222;">
+        <div class="container">
+            <a href="index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
+            <p style="color: var(--text-muted); margin: 20px 0;">123 Warrior Way, Tokyo, Japan • Precision. Discipline.
+                Respect.</p>
+            <div
+                style="display: flex; justify-content: center; gap: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Support</a>
+                <a href="pages/dashboard-admin.html">Admin</a>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.75rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS
+                RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings | Martial Arts Dojo</title>
+
+    <!-- Fonts & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header flex items-center gap-sm">
+                <i class="fas fa-fist-raised fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">DOJO</span>
+            </div>
+            <div style="padding: 0 20px; margin-top: 10px;">
+                <span
+                    style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.8rem;">ADMIN
+                    MODE</span>
+            </div>
+
+            <div class="sidebar-menu">
+                <a href="dashboard-admin.html" class="menu-item"><i class="fas fa-tachometer-alt"></i> Overview</a>
+                <a href="dashboard-admin-members.html" class="menu-item"><i class="fas fa-users"></i> Members</a>
+                <a href="dashboard-admin-classes.html" class="menu-item"><i class="fas fa-calendar-check"></i>
+                    Classes</a>
+                <a href="dashboard-admin-financials.html" class="menu-item"><i class="fas fa-dollar-sign"></i>
+                    Financials</a>
+                <a href="dashboard-admin-settings.html" class="menu-item active"><i class="fas fa-cog"></i> Settings</a>
+            </div>
+
+            <div style="padding: var(--spacing-lg);">
+                <a href="#" class="btn btn-outline logout-btn"
+                    style="width: 100%; border-color: rgba(255,255,255,0.2); color: white;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <button class="mobile-menu-btn" onclick="toggleSidebar()"
+                    style="display: block; color: var(--text-main);">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="flex items-center gap-md">
+                    <button class="btn btn-outline theme-toggle-btn"><i class="fas fa-moon"></i></button>
+                    <button class="btn btn-outline rtl-toggle-btn"><span
+                            style="font-weight: bold; font-size: 0.8rem;">RTL</span></button>
+                    <div class="flex items-center gap-sm">
+                        <img src="https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                            style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" alt="Admin">
+                        <span style="font-weight: 600;">Sensei John</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-container">
+                <h2 class="mb-lg">System Settings</h2>
+
+                <div class="card" style="max-width: 800px;">
+                    <form onsubmit="event.preventDefault(); alert('Settings Saved!');">
+                        <div class="mb-lg">
+                            <h3 class="mb-md">General Information</h3>
+                            <div class="mb-md">
+                                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Dojo Name</label>
+                                <input type="text" value="Martial Arts Dojo"
+                                    style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-body); color: var(--text-main);">
+                            </div>
+                            <div class="mb-md">
+                                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Contact
+                                    Email</label>
+                                <input type="email" value="admin@dojo.com"
+                                    style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-body); color: var(--text-main);">
+                            </div>
+                        </div>
+
+                        <div class="mb-lg"
+                            style="margin-top: 30px; padding-top: 30px; border-top: 1px solid var(--border-color);">
+                            <h3 class="mb-md">Preferences</h3>
+                            <div class="flex items-center justify-between mb-sm">
+                                <span>Enable Email Notifications</span>
+                                <input type="checkbox" checked>
+                            </div>
+                            <div class="flex items-center justify-between mb-sm">
+                                <span>Allow Online Payments</span>
+                                <input type="checkbox" checked>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Show Belt Progress to Students</span>
+                                <input type="checkbox" checked>
+                            </div>
+                        </div>
+
+                        <div class="text-right mt-lg">
+                            <button class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- Mobile Sidebar Overlay -->
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Simple Sidebar Toggle Logic for Dashboard
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
