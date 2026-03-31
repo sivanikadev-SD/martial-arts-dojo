@@ -196,7 +196,9 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--spacing-4);
+  flex: 1;
 }
 
 .controls {
@@ -204,7 +206,6 @@ button {
   align-items: center;
   gap: var(--spacing-3);
   flex-shrink: 0;
-  margin-inline-start: auto;
 }
 
 #theme-toggle,
