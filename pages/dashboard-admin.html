@@ -169,12 +169,27 @@
         <aside class="admin-sidebar">
             <div class="header__logo" style="margin-bottom: 40px;">ADMIN<span>X</span></div>
             <nav style="display: flex; flex-direction: column; gap: 8px;">
-                <a href="#overview" class="dash-nav-item active" onclick="switchSection('overview')">📊 Overview</a>
-                <a href="#logs" class="dash-nav-item" onclick="switchSection('logs')">🎥 Logs</a>
-                <a href="#email" class="dash-nav-item" onclick="switchSection('email')">📧 Email</a>
-                <a href="#settings" class="dash-nav-item" onclick="switchSection('settings')">⚙️ Settings</a>
+                <a href="#overview" class="dash-nav-item active" onclick="switchSection('overview')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    Overview
+                </a>
+                <a href="#logs" class="dash-nav-item" onclick="switchSection('logs')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    Logs
+                </a>
+                <a href="#email" class="dash-nav-item" onclick="switchSection('email')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    Email
+                </a>
+                <a href="#settings" class="dash-nav-item" onclick="switchSection('settings')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    Settings
+                </a>
                 <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
-                <a href="../index.html?msg=logout_success" class="dash-nav-item">Logout</a>
+                <a href="../index.html?msg=logout_success" class="dash-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    Logout
+                </a>
             </nav>
         </aside>
 
@@ -273,7 +288,7 @@
                         style="background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid #222;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
                             <strong>S. Tan (Student)</strong>
-                            <small style="color: var(--accent-gold);">MAR 12</small>
+                            <small style="color: var(--primary-red);">MAR 12</small>
                         </div>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">Interested in the private coaching slots
                             for next month...</p>

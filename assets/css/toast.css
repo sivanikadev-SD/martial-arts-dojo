@@ -15,7 +15,7 @@
     padding: 15px 25px;
     border-radius: var(--radius-md);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-inline-start: 5px solid var(--accent-gold);
+    border-inline-start: 5px solid var(--primary-red);
     display: flex;
     align-items: center;
     gap: 12px;

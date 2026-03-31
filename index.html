@@ -46,9 +46,13 @@
             display: flex;
             align-items: center;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/images/banner.webp') no-repeat center center/cover;
+            background-size: cover;
+            background-position: center;
             text-align: center;
         }
-
+.hero__content{
+    margin-top: 60px;
+}
         /* 2. Welcome/History */
         .welcome-grid {
             display: grid;
@@ -62,6 +66,27 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: var(--spacing-4);
+        }
+
+        .program-card {
+            background: var(--bg-card, #111);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid #222;
+        }
+
+        .program-card > div {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card > div p {
+            flex: 1;
         }
 
         /* 4. Belt Promo */
@@ -150,12 +175,15 @@
                 <li><a href="pages/dashboard-student.html">Student</a></li>
                 <li><a href="pages/dashboard-admin.html">Admin</a></li>
                 <li class="mobile-only"><a href="index.html?msg=logout_success">Logout</a></li>
+                <li class="mobile-only" style="padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); width: 100%; display: flex; justify-content: center; gap: 20px;">
+                    <button class="theme-toggle-mobile" style="background: none; border: 1px solid #444; color: white; padding: 10px 20px; border-radius: 8px;">🌓 Theme</button>
+                    <button class="rtl-toggle-mobile" style="background: none; border: 1px solid #444; color: white; padding: 10px 20px; border-radius: 8px;">RTL</button>
+                </li>
             </ul>
             <div class="controls">
                 <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
                 <button id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
-                <a href="pages/login.html" class="btn btn--outline"
-                    style="padding: 8px 15px; font-size: 0.75rem; border-color: var(--accent-gold); color: var(--accent-gold);">PORTAL</a>
+                <a href="pages/login.html" class="btn btn--outline">LOGIN</a>
             </div>
             <div class="burger">
                 <div></div>
@@ -170,7 +198,7 @@
         <section class="hero">
             <div class="container hero__content">
                 <span
-                    style="color: var(--accent-gold); letter-spacing: 4px; font-weight: 700; text-transform: uppercase;">Est.
+                    style="color: var(--primary-red); letter-spacing: 4px; font-weight: 700; text-transform: uppercase;">Est.
                     2010 • Professional Dojo</span>
                 <h1
                     style="font-size: clamp(3rem, 10vw, 6rem); margin: 10px 0 20px; font-weight: 900; line-height: 0.9;">
@@ -270,8 +298,8 @@
                     style="width: 100%; max-width: 400px; background: #333; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px;">
                     <div style="width: 65%; height: 100%; background: var(--primary-red);"></div>
                 </div>
-                <p style="font-weight: 700; color: var(--accent-gold);">65% TO PURPLE BELT</p>
-                <a href="pages/dashboard-student.html" class="btn btn--accent" style="margin-top: 20px;">Enter Portal</a>
+                <p style="font-weight: 700; color: var(--primary-red);">65% TO PURPLE BELT</p>
+                <a href="pages/dashboard-student.html" class="btn btn--accent" style="margin-top: 20px;">Login</a>
             </div>
         </section>
 
@@ -354,20 +382,52 @@
         </section>
     </main>
 
-    <footer class="section" style="background: #000; text-align: center; border-top: 1px solid #222;">
+    <footer class="footer section" style="background: #000; border-top: 1px solid #1a1a1a; padding-top: 80px;">
         <div class="container">
-            <a href="index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
-            <p style="color: var(--text-muted); margin: 20px 0;">123 Warrior Way, Tokyo, Japan • Precision. Discipline.
-                Respect.</p>
-            <div
-                style="display: flex; justify-content: center; gap: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-                <a href="#">Support</a>
-                <a href="pages/dashboard-admin.html">Admin</a>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; margin-bottom: 60px;">
+                <div>
+                    <a href="index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
+                    <p style="color: var(--text-muted); margin-top: 20px; line-height: 1.8;">The premier martial arts academy in Tokyo. Precision. Discipline. Respect.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#" style="color: var(--text-primary);">FB</a>
+                        <a href="#" style="color: var(--text-primary);">IG</a>
+                        <a href="#" style="color: var(--text-primary);">YT</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">PROGRAMS</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li><a href="pages/programs.html">Muay Thai</a></li>
+                        <li><a href="pages/programs.html">Brazilian Jiu-Jitsu</a></li>
+                        <li><a href="pages/programs.html">Karate Shotokan</a></li>
+                        <li><a href="pages/programs.html">Mixed Martial Arts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">RESOURCES</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li><a href="pages/blog.html">Dojo Journal</a></li>
+                        <li><a href="pages/pricing.html">Membership Plans</a></li>
+                        <li><a href="pages/contact.html">Support Center</a></li>
+                        <li><a href="pages/dashboard-student.html">Student Portal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">CONTACT</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li>123 Warrior Way, Tokyo</li>
+                        <li>oss@dojoxacademy.com</li>
+                        <li>+81 03-1234-5678</li>
+                    </ul>
+                </div>
             </div>
-            <p style="margin-top: 30px; font-size: 0.75rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS
-                RESERVED.</p>
+            <div style="padding-top: 30px; border-top: 1px solid #111; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <p style="font-size: 0.8rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS RESERVED.</p>
+                <div style="display: flex; gap: 25px; font-size: 0.8rem; color: #444;">
+                    <a href="#">PRIVACY POLICY</a>
+                    <a href="#">TERMS OF SERVICE</a>
+                </div>
+            </div>
         </div>
     </footer>
 

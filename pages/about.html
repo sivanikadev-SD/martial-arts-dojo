@@ -112,8 +112,7 @@
             <div class="controls">
                 <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
                 <button id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
-                <a href="login.html" class="btn btn--outline"
-                    style="padding: 8px 15px; font-size: 0.75rem; border-color: var(--accent-gold); color: var(--accent-gold);">PORTAL</a>
+                <a href="login.html" class="btn btn--outline">LOGIN</a>
             </div>
             <div class="burger">
                 <div></div>
@@ -128,7 +127,7 @@
         <section class="section"
             style="padding-top: 150px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('../assets/images/banner2.webp') center/cover; text-align: center;">
             <div class="container">
-                <span style="color: var(--accent-gold); font-weight: 700; letter-spacing: 3px;">OUR PHILOSOPHY</span>
+                <span style="color: var(--primary-red); font-weight: 700; letter-spacing: 3px;">OUR PHILOSOPHY</span>
                 <h1 style="font-size: clamp(3rem, 8vw, 5rem); margin-top: 15px;">More Than a <span
                         style="color: var(--primary-red);">Dojo</span></h1>
                 <p style="max-width: 700px; margin: 20px auto; color: var(--text-secondary);">We believe martial arts is
@@ -175,22 +174,22 @@
                 </div>
                 <div class="grid-3"
                     style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-                    <div class="value-card">
+                    <div class="value-card" style="border-top: 4px solid var(--primary-red); background: var(--bg-card); padding: 30px; border-radius: 15px; display: flex; flex-direction: column; height: 100%;">
                         <span style="font-size: 3rem;">🥋</span>
                         <h3>REMAIN HUMBLE</h3>
-                        <p style="color: var(--text-muted); margin-top: 15px;">True strength needs no boast. We leave
+                        <p style="color: var(--text-muted); margin-top: 15px; flex: 1;">True strength needs no boast. We leave
                             our egos at the door.</p>
                     </div>
-                    <div class="value-card" style="border-top: 4px solid var(--accent-gold);">
+                    <div class="value-card" style="border-top: 4px solid var(--primary-red); background: var(--bg-card); padding: 30px; border-radius: 15px; display: flex; flex-direction: column; height: 100%;">
                         <span style="font-size: 3rem;">⚔️</span>
                         <h3>SEEK PERFECTION</h3>
-                        <p style="color: var(--text-muted); margin-top: 15px;">In every strike and every transition, we
+                        <p style="color: var(--text-muted); margin-top: 15px; flex: 1;">In every strike and every transition, we
                             strive for technical flawlessnes.</p>
                     </div>
-                    <div class="value-card" style="border-top: 4px solid var(--accent-neon);">
+                    <div class="value-card" style="border-top: 4px solid var(--primary-red); background: var(--bg-card); padding: 30px; border-radius: 15px; display: flex; flex-direction: column; height: 100%;">
                         <span style="font-size: 3rem;">🤝</span>
                         <h3>BUILD OTHERS</h3>
-                        <p style="color: var(--text-muted); margin-top: 15px;">We are only as strong as our training
+                        <p style="color: var(--text-muted); margin-top: 15px; flex: 1;">We are only as strong as our training
                             partners. We grow together.</p>
                     </div>
                 </div>
@@ -222,7 +221,7 @@
                     <p style="color: var(--text-secondary); margin-bottom: 20px;">DojoX is orgullosamente derived from
                         the traditional Shotokan and Gracie lineages. We maintain strong ties to our roots while
                         evolving for the modern era.</p>
-                    <a href="#" style="color: var(--accent-gold); text-decoration: underline;">View Lineage Map</a>
+                    <a href="#" style="color: var(--primary-red); text-decoration: underline;">View Lineage Map</a>
                 </div>
                 <div
                     style="background: var(--bg-card); padding: 40px; border-radius: var(--radius-lg); text-align: center;">
@@ -256,20 +255,52 @@
         </section>
     </main>
 
-    <footer class="section" style="background: #000; text-align: center; border-top: 1px solid #222;">
+    <footer class="footer section" style="background: #000; border-top: 1px solid #1a1a1a; padding-top: 80px;">
         <div class="container">
-            <a href="../index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
-            <p style="color: var(--text-muted); margin: 20px 0;">123 Warrior Way, Tokyo, Japan • Precision. Discipline.
-                Respect.</p>
-            <div
-                style="display: flex; justify-content: center; gap: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-                <a href="#">Support</a>
-                <a href="dashboard-admin.html">Admin</a>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; margin-bottom: 60px;">
+                <div>
+                    <a href="../index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
+                    <p style="color: var(--text-muted); margin-top: 20px; line-height: 1.8;">The premier martial arts academy in Tokyo. Precision. Discipline. Respect.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#" style="color: var(--text-primary);">FB</a>
+                        <a href="#" style="color: var(--text-primary);">IG</a>
+                        <a href="#" style="color: var(--text-primary);">YT</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">PROGRAMS</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li><a href="programs.html">Muay Thai</a></li>
+                        <li><a href="programs.html">Brazilian Jiu-Jitsu</a></li>
+                        <li><a href="programs.html">Karate Shotokan</a></li>
+                        <li><a href="programs.html">Mixed Martial Arts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">RESOURCES</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li><a href="blog.html">Dojo Journal</a></li>
+                        <li><a href="pricing.html">Membership Plans</a></li>
+                        <li><a href="contact.html">Support Center</a></li>
+                        <li><a href="dashboard-student.html">Student Portal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">CONTACT</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li>123 Warrior Way, Tokyo</li>
+                        <li>oss@dojoxacademy.com</li>
+                        <li>+81 03-1234-5678</li>
+                    </ul>
+                </div>
             </div>
-            <p style="margin-top: 30px; font-size: 0.75rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS
-                RESERVED.</p>
+            <div style="padding-top: 30px; border-top: 1px solid #111; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <p style="font-size: 0.8rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS RESERVED.</p>
+                <div style="display: flex; gap: 25px; font-size: 0.8rem; color: #444;">
+                    <a href="#">PRIVACY POLICY</a>
+                    <a href="#">TERMS OF SERVICE</a>
+                </div>
+            </div>
         </div>
     </footer>
 

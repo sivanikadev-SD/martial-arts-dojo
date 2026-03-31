@@ -107,9 +107,9 @@
     color: var(--primary-red) !important;
 }
 
-[data-theme="light"] section[style*="padding-top: 150px"] h1 span[style*="accent-gold"],
-[data-theme="light"] .hero span[style*="accent-gold"] {
-    color: var(--accent-gold) !important;
+[data-theme="light"] section[style*="padding-top: 150px"] h1 span[style*="primary-red"],
+[data-theme="light"] .hero span[style*="primary-red"] {
+    color: var(--primary-red) !important;
 }
 
 /* Blog post cards stay dark in light mode */

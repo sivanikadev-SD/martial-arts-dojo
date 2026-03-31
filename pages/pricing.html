@@ -35,6 +35,13 @@
             border: 1px solid #222;
             transition: 0.3s;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .price-card ul {
+            flex: 1;
         }
 
         .price-card.popular {
@@ -98,8 +105,7 @@
             <div class="controls">
                 <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
                 <button id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
-                <a href="login.html" class="btn btn--outline"
-                    style="padding: 8px 15px; font-size: 0.75rem; border-color: var(--accent-gold); color: var(--accent-gold);">PORTAL</a>
+                <a href="login.html" class="btn btn--outline">LOGIN</a>
             </div>
             <div class="burger">
                 <div></div>
@@ -125,6 +131,8 @@
         <section class="section container">
             <div class="pricing-grid">
                 <div class="price-card">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=400" 
+                         style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
                     <h3>Basic Pack</h3>
                     <div style="font-size: 3rem; font-weight: 900; margin: 20px 0;">$89<small
                             style="font-size: 1rem; color: var(--text-muted);">/mo</small></div>
@@ -136,6 +144,8 @@
                     <a href="#" class="btn btn--outline" style="width: 100%;">Select Plan</a>
                 </div>
                 <div class="price-card popular">
+                    <img src="../assets/images/home.webp" 
+                         style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
                     <h3>Warrior Elite</h3>
                     <div style="font-size: 3rem; font-weight: 900; margin: 20px 0;">$149<small
                             style="font-size: 1rem; color: var(--text-muted);">/mo</small></div>
@@ -148,6 +158,8 @@
                     <a href="#" class="btn btn--primary" style="width: 100%;">Get Started</a>
                 </div>
                 <div class="price-card">
+                    <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=400" 
+                         style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;">
                     <h3>Pro Annual</h3>
                     <div style="font-size: 3rem; font-weight: 900; margin: 20px 0;">$1299<small
                             style="font-size: 1rem; color: var(--text-muted);">/yr</small></div>
@@ -210,7 +222,7 @@
                     <h2>Private Coaching</h2>
                     <p style="color: var(--text-secondary); margin: 20px 0;">Accelerate your progress with 1-on-1
                         sessions. Tailored specifically to your technical gaps and physical conditioning.</p>
-                    <div style="font-weight: 700; font-size: 1.5rem; color: var(--accent-gold);">$80 / SESSION</div>
+                    <div style="font-weight: 700; font-size: 1.5rem; color: var(--primary-red);">$80 / SESSION</div>
                     <a href="contact.html" class="btn btn--outline" style="margin-top: 25px;">Inquire Session</a>
                 </div>
                 <img src="https://images.unsplash.com/photo-1552072092-2f9b13240955?auto=format&fit=crop&q=80&w=600"
@@ -256,20 +268,52 @@
         </section>
     </main>
 
-    <footer class="section" style="background: #000; text-align: center; border-top: 1px solid #222;">
+    <footer class="footer section" style="background: #000; border-top: 1px solid #1a1a1a; padding-top: 80px;">
         <div class="container">
-            <a href="../index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
-            <p style="color: var(--text-muted); margin: 20px 0;">123 Warrior Way, Tokyo, Japan • Precision. Discipline.
-                Respect.</p>
-            <div
-                style="display: flex; justify-content: center; gap: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-                <a href="#">Support</a>
-                <a href="dashboard-admin.html">Admin</a>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; margin-bottom: 60px;">
+                <div>
+                    <a href="../index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
+                    <p style="color: var(--text-muted); margin-top: 20px; line-height: 1.8;">The premier martial arts academy in Tokyo. Precision. Discipline. Respect.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#" style="color: var(--text-primary);">FB</a>
+                        <a href="#" style="color: var(--text-primary);">IG</a>
+                        <a href="#" style="color: var(--text-primary);">YT</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">PROGRAMS</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li><a href="programs.html">Muay Thai</a></li>
+                        <li><a href="programs.html">Brazilian Jiu-Jitsu</a></li>
+                        <li><a href="programs.html">Karate Shotokan</a></li>
+                        <li><a href="programs.html">Mixed Martial Arts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">RESOURCES</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li><a href="blog.html">Dojo Journal</a></li>
+                        <li><a href="pricing.html">Membership Plans</a></li>
+                        <li><a href="contact.html">Support Center</a></li>
+                        <li><a href="dashboard-student.html">Student Portal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">CONTACT</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li>123 Warrior Way, Tokyo</li>
+                        <li>oss@dojoxacademy.com</li>
+                        <li>+81 03-1234-5678</li>
+                    </ul>
+                </div>
             </div>
-            <p style="margin-top: 30px; font-size: 0.75rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS
-                RESERVED.</p>
+            <div style="padding-top: 30px; border-top: 1px solid #111; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <p style="font-size: 0.8rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS RESERVED.</p>
+                <div style="display: flex; gap: 25px; font-size: 0.8rem; color: #444;">
+                    <a href="#">PRIVACY POLICY</a>
+                    <a href="#">TERMS OF SERVICE</a>
+                </div>
+            </div>
         </div>
     </footer>
 
