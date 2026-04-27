@@ -42,13 +42,14 @@
 
         /* 1. Hero */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/images/banner.webp') no-repeat center center/cover;
             background-size: cover;
             background-position: center;
             text-align: center;
+            padding: 100px 0;
         }
 .hero__content{
     margin-top: 60px;
@@ -175,10 +176,6 @@
                 <li><a href="pages/dashboard-student.html">Student</a></li>
                 <li><a href="pages/dashboard-admin.html">Admin</a></li>
                 <li class="mobile-only"><a href="index.html?msg=logout_success">Logout</a></li>
-                <li class="mobile-only" style="padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); width: 100%; display: flex; justify-content: center; gap: 20px;">
-                    <button class="theme-toggle-mobile" style="background: none; border: 1px solid #444; color: white; padding: 10px 20px; border-radius: 8px;">🌓 Theme</button>
-                    <button class="rtl-toggle-mobile" style="background: none; border: 1px solid #444; color: white; padding: 10px 20px; border-radius: 8px;">RTL</button>
-                </li>
             </ul>
             <div class="controls">
                 <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
@@ -207,9 +204,9 @@
                         HUMBLE.</span></h1>
                 <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 30px; color: rgba(255,255,255,0.85);">
                     Master the arts of discipline, respect, and technical perfection at DojoX Academy.</p>
-                <div class="hero__ctas">
+                <div class="hero__ctas" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
                     <a href="pages/pricing.html" class="btn btn--primary">Register Now</a>
-                    <a href="#about" class="btn btn--outline" style="margin-inline-start: 10px;">Our Philosophy</a>
+                    <a href="#about" class="btn btn--outline">Our Philosophy</a>
                 </div>
             </div>
         </section>
