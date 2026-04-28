@@ -484,7 +484,7 @@ button {
   }
 
   .section {
-    padding: var(--spacing-6) 0;
+    /* padding: var(--spacing-6) 0; */
   }
 }
 
