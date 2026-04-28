@@ -79,7 +79,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   width: 100%;
-  padding-top: 80px; /* Standardize padding for fixed header */
+  padding-top: 80px; 
+  /* Standardize padding for fixed header */
 }
 
 /* Auth pages don't need padding-top */
@@ -156,26 +157,31 @@ button {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 var(--spacing-5);
+  /* padding: 16px; */
   /* Increased from spacing-4 (24px) to spacing-5 (32px) */
 }
 
 .section {
-  padding: var(--spacing-7) 0;
+  padding: var(--spacing-7) 16px;
 }
 
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--spacing-4);
+    padding: 16px;
   }
 
   .section {
-    padding: var(--spacing-7) 0;
+    padding: var(--spacing-7) 10px;
   }
 }
 
 @media (max-width: 480px) {
   .container {
     padding: 0 var(--spacing-3);
+  }
+  .section {
+    padding: var(--spacing-7) 10px;
   }
 }
 
