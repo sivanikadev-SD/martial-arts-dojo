@@ -10,9 +10,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
 
@@ -29,107 +29,34 @@
 
 <body>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container flex justify-between items-center">
-            <a href="../index.html" class="logo flex items-center gap-sm">
-                <i class="fas fa-fist-raised fa-2x" style="color: var(--primary-color);"></i>
-                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">DOJO</span>
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="nav-links items-center">
-                <div class="relative group px-3 py-2">
-                    <button
-                        class="flex items-center gap-1 text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Home
-                        <div
-                            class="absolute left-0 top-full mt-2 w-48 bg-white-100 dark:bg-slate-200 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 p-1">
-                            <a href="../index.html"
-                                class="block px-4 py-2.5 text-sm text-black dark:text-black hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-white dark:hover:text-white rounded-lg transition-colors">Home</a>
-                            <a href="../home2.html"
-                                class="block px-4 py-2.5 text-sm text-black dark:text-black hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-white dark:hover:text-white rounded-lg transition-colors">Home2</a>
-
-                        </div>
-                </div>
-
-                <a href="about.html">About</a>
-                <a href="classes.html">Classes</a>
-                <a href="instructors.html">Instructors</a>
-                <div class="relative group px-3 py-2">
-                    <button
-                        class="flex items-center gap-1 text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Blogs
-                        <div
-                            class="absolute left-0 top-full mt-2 w-48 bg-white-100 dark:bg-slate-200 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 p-1">
-                            <a  href="blog-list.html"
-                                class="block px-4 py-2.5 text-sm text-black dark:text-black hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-white dark:hover:text-white rounded-lg transition-colors active">BlogList</a>
-                            <a href="blog-single.html"
-                                class="block px-4 py-2.5 text-sm text-black dark:text-black hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-white dark:hover:text-white rounded-lg transition-colors">BlogSingle</a>
-
-                        </div>
-                </div>
-
-
-                <a href="contact.html">Contact</a>
-                <div class="relative group px-3 py-2">
-                    <button
-                        class="flex items-center gap-1 text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Dashboard
-                        <div
-                            class="absolute left-0 top-full mt-2 w-48 bg-white-100 dark:bg-slate-200 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 p-1">
-                            <a href="dashboard-student.html"
-                                class="block px-4 py-2.5 text-sm text-black dark:text-black hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-white dark:hover:text-white rounded-lg transition-colors">User</a>
-                            <a href="dashboard-admin.html"
-                                class="block px-4 py-2.5 text-sm text-black dark:text-black hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-white dark:hover:text-white rounded-lg transition-colors">Admin</a>
-
-                        </div>
-                </div>
-
-                <button class="btn btn-outline"><a href="login.html">Sign In / Sign Up</a></button>
-                <button class="btn btn-outline theme-toggle-btn" aria-label="Toggle Dark Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button class="btn btn-outline rtl-toggle-btn" aria-label="Toggle RTL">
-                    <span style="font-weight: bold; font-size: 0.8rem;">RTL</span>
-                </button>
-            </nav>
-
-
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="header__logo">DOJO<span>X</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="home-2.html">Modern</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dashboard-student.html">Student</a></li>
+                <li><a href="dashboard-admin.html">Admin</a></li>
+                <li class="mobile-only"><a href="../index.html?msg=logout_success">Logout</a></li>
+            </ul>
+            <div class="controls">
+                <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+                <button id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+                <a href="login.html" class="btn btn--outline">LOGIN</a>
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
     </header>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu">
-        <div class="flex justify-between items-center mb-lg">
-            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">Menu</span>
-            <button class="mobile-menu-btn mobile-menu-close">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <a href="index.html" class="form-label">Home</a>
-        <a href="home2.html" class="form-label">Home2</a>
-        <a href="about.html" class="form-label">About</a>
-        <a href="classes.html" class="form-label">Classes</a>
-        <a href="instructors.html" class="form-label">Instructors</a>
-        <a href="blog-list.html" class="form-label active">Blog</a>
-        <a href="blog-single.html" class="form-label">Blog Single</a>
-        <a href="contact.html" class="form-label">Contact</a>
-        <a href="dashboard-student.html" class="form-label">Dashboard</a>
-        <a href="dashboard-admin.html" class="form-label">Dashboard</a>
-        <a href="login.html" class="form-label">Login</a>
-        <a href="register.html" class="form-label">Register</a>
-        <div class="flex gap-sm mt-md">
-            <button class="btn btn-outline theme-toggle-btn" aria-label="Toggle Dark Mode">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="btn btn-outline rtl-toggle-btn" aria-label="Toggle RTL">
-                <span style="font-weight: bold; font-size: 0.8rem;">RTL</span>
-            </button>
-        </div>
-
-    </div>
 
     <!-- Section 1: Hero -->
     <section class="section flex items-center justify-center text-center"
@@ -280,42 +207,52 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer style="background-color: var(--bg-body); color: var(--text-main); padding: var(--spacing-xl) 0;">
-        <div class="container grid grid-4 gap-md mb-lg">
-            <div><a href="../index.html" class="logo flex items-center gap-sm">
-                <i class="fas fa-fist-raised fa-2x" style="color: var(--primary-color);"></i>
-                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">DOJO</span>
-            </a>
-                <p style="color: var(--text-muted);">Empowering lives through martial arts.</p>
-            </div>
-            <div>
-                <h4 style="color: var(--text-main);">Links</h4>
-                <ul>
-                    <li><a href="#about" style="color: var(--text-muted);">About</a></li>
-                    <li><a href="#classes" style="color: var(--text-muted);">Classes</a></li>
-                    <li><a href="#contact" style="color: var(--text-muted);">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="color: var(--text-main);">Legal</h4>
-                <ul>
-                    <li><a href="#" style="color: var(--text-muted);">Privacy Policy</a></li>
-                    <li><a href="#" style="color: var(--text-muted);">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="color: var(--text-main);">Social</h4>
-                <div class="flex gap-sm">
-                    <a href="#" style="color: var(--text-muted);"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="#" style="color: var(--text-muted);"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="#" style="color: var(--text-muted);"><i class="fab fa-twitter fa-lg"></i></a>
+    <footer class="footer section" style="background: #000; border-top: 1px solid #1a1a1a; padding-top: 80px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; margin-bottom: 60px;">
+                <div>
+                    <a href="../index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
+                    <p style="color: var(--text-muted); margin-top: 20px; line-height: 1.8;">The premier martial arts academy in Tokyo. Precision. Discipline. Respect.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#" style="color: var(--text-primary);"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: var(--text-primary);"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: var(--text-primary);"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">PROGRAMS</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li><a href="programs.html">Muay Thai</a></li>
+                        <li><a href="programs.html">Brazilian Jiu-Jitsu</a></li>
+                        <li><a href="programs.html">Karate Shotokan</a></li>
+                        <li><a href="programs.html">Mixed Martial Arts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">RESOURCES</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li><a href="blog.html">Dojo Journal</a></li>
+                        <li><a href="pricing.html">Membership Plans</a></li>
+                        <li><a href="contact.html">Support Center</a></li>
+                        <li><a href="dashboard-student.html">Student Portal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">CONTACT</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li>123 Warrior Way, Tokyo</li>
+                        <li>oss@dojoxacademy.com</li>
+                        <li>+81 03-1234-5678</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="container text-center"
-            style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: var(--spacing-md); color: var(--text-muted);">
-            <p>&copy; 2026 Martial Arts Dojo. All rights reserved.</p>
+            <div style="padding-top: 30px; border-top: 1px solid #111; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <p style="font-size: 0.8rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS RESERVED.</p>
+                <div style="display: flex; gap: 25px; font-size: 0.8rem; color: #444;">
+                    <a href="#">PRIVACY POLICY</a>
+                    <a href="#">TERMS OF SERVICE</a>
+                </div>
+            </div>
         </div>
     </footer>
 

@@ -10,9 +10,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <!-- Icons -->
@@ -115,63 +115,36 @@
 <body class="dark-mode" data-theme="dark"> <!-- Default to Dark Mode for Creative Layout -->
 
     <!-- Navigation (Transparent) -->
-    <header class="site-header" style="background: transparent; border: none; position: fixed; width: 100%;">
-        <div class="container flex justify-between items-center">
-            <a href="index.html" class="logo flex items-center gap-sm">
-                <i class="fas fa-fist-raised fa-2x" style="color: var(--primary-color);"></i>
-                <span
-                    style="font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; color: white;">DOJO</span>
-            </a>
-
-            <nav class="nav-links">
-                <a href="index.html" style="color: white;">Home Standard</a>
-                <a  class="active" href="#" style="color: white; border-bottom: 2px solid var(--primary-color);">Creative</a>
-                <a href="pages/about.html" class="form-label">About</a>
-                <a href="pages/gallery.html" class="form-label">Gallery</a>
-                <a href="pages/classes.html" style="color: white;">Classes</a>
-                <a href="pages/instructors.html" style="color: white;">Team</a>
-                <a href="pages/blog-list.html" class="form-label">Blog</a>
-                <a href="pages/blog-single.html" class="form-label">Blog Single</a>
-                <a href="pages/contact.html" style="color: white;">Contact</a>
-                <a href="pages/login.html" style="color: white;">Sign In / Sign Up</a>
-                <button class="btn btn-outline theme-toggle-btn" aria-label="Toggle Dark Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button class="btn btn-outline rtl-toggle-btn" aria-label="Toggle RTL">
-                    <span style="font-weight: bold; font-size: 0.8rem;">RTL</span>
-                </button>
-                <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false"
-                    style="color: white; font-size: 1.5rem;">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-        </div>
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="header__logo">DOJO<span>X</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="home2.html" class="active">Modern</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="pages/programs.html">Programs</a></li>
+                <li><a href="pages/instructors.html">Instructors</a></li>
+                <li><a href="pages/pricing.html">Pricing</a></li>
+                <li><a href="pages/blog.html">Blog</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+                <li><a href="pages/dashboard-student.html">Student</a></li>
+                <li><a href="pages/dashboard-admin.html">Admin</a></li>
+                <li class="mobile-only"><a href="index.html?msg=logout_success">Logout</a></li>
+            </ul>
+            <div class="controls">
+                <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+                <button id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+                <a href="pages/login.html" class="btn btn--outline">LOGIN</a>
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
     </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu">
-        <div class="flex justify-between items-center mb-lg">
-            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">Menu</span>
-            <button class="mobile-menu-btn mobile-menu-close">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <a href="index.html" class="form-label">Home</a>
-        <a href="home2.html" class="form-label active">Creative Home</a>
-        <a href="pages/about.html" class="form-label">About</a>
-        <a href="pages/classes.html" class="form-label">Classes</a>
-        <a href="pages/instructors.html" class="form-label">Instructors</a>
-        <a href="pages/blog-list.html" class="form-label">Blog</a>
-        <a href="pages/contact.html" class="form-label">Contact</a>
-        <div class="flex gap-sm mt-md">
-            <button class="btn btn-outline theme-toggle-btn" aria-label="Toggle Dark Mode">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="btn btn-outline rtl-toggle-btn" aria-label="Toggle RTL">
-                <span style="font-weight: bold; font-size: 0.8rem;">RTL</span>
-            </button>
-        </div>
-    </div>
+
 
     <!-- Hero -->
     <section class="hero-creative">
@@ -327,21 +300,52 @@
     </section>
 
     <!-- Footer -->
-    <footer style="background: black; border-top: 1px solid #333; padding: 50px 0; text-align: center;">
-        <div class="flex justify-center gap-md">
-            <a href="../index.html" class="logo flex items-center gap-sm">
-                <i class="fas fa-fist-raised fa-2x" style="color: var(--primary-color);"></i>
-                <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">DOJO</span>
-            </a>
-            <p style="color: white;">Martial Arts & Fitness</p>
-        </div>
-        <div class="flex justify-center gap-md" style="margin-top: 20px;">
-            <a href="#" style="color: #555;">Instagram</a>
-            <a href="#" style="color: #555;">Youtube</a>
-            <a href="#" style="color: #555;">Twitter</a>
-        </div>
-        <div class="flex justify-center gap-md" style="margin-top: 20px;">
-            <p style="color: white;">© 2026 DOJO. All rights reserved.</p>
+    <footer class="footer section" style="background: #000; border-top: 1px solid #1a1a1a; padding-top: 80px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; margin-bottom: 60px;">
+                <div>
+                    <a href="index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
+                    <p style="color: var(--text-muted); margin-top: 20px; line-height: 1.8;">The premier martial arts academy in Tokyo. Precision. Discipline. Respect.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#" style="color: var(--text-primary);"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: var(--text-primary);"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: var(--text-primary);"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">PROGRAMS</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li><a href="pages/programs.html">Muay Thai</a></li>
+                        <li><a href="pages/programs.html">Brazilian Jiu-Jitsu</a></li>
+                        <li><a href="pages/programs.html">Karate Shotokan</a></li>
+                        <li><a href="pages/programs.html">Mixed Martial Arts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">RESOURCES</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li><a href="pages/blog.html">Dojo Journal</a></li>
+                        <li><a href="pages/pricing.html">Membership Plans</a></li>
+                        <li><a href="pages/contact.html">Support Center</a></li>
+                        <li><a href="pages/dashboard-student.html">Student Portal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">CONTACT</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li>123 Warrior Way, Tokyo</li>
+                        <li>oss@dojoxacademy.com</li>
+                        <li>+81 03-1234-5678</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="padding-top: 30px; border-top: 1px solid #111; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <p style="font-size: 0.8rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS RESERVED.</p>
+                <div style="display: flex; gap: 25px; font-size: 0.8rem; color: #444;">
+                    <a href="#">PRIVACY POLICY</a>
+                    <a href="#">TERMS OF SERVICE</a>
+                </div>
+            </div>
         </div>
     </footer>
 
