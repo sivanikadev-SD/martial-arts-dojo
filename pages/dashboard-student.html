@@ -33,8 +33,8 @@
             padding: 40px 20px;
             border-inline-end: 1px solid #222;
             position: sticky;
-            top: 80px;
-            height: calc(100vh - 80px);
+            top: 0;
+            height: 100vh;
             display: flex;
             flex-direction: column;
         }
@@ -103,6 +103,7 @@
             overflow: hidden;
             border: 2px solid var(--primary-red);
             box-shadow: 0 10px 30px rgba(211, 47, 47, 0.1);
+            color: white;
         }
 
         .belt-fill {
@@ -133,7 +134,7 @@
             gap: 12px;
             padding: 12px 15px;
             border-radius: 10px;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
@@ -233,9 +234,12 @@
         </nav>
     </header>
 
-    <div class="dash-container" style="padding-top: 80px;">
+    <div class="dash-container">
         <!-- Sidebar Navigation -->
         <aside class="dash-sidebar">
+            <div style="margin-bottom: 40px; padding-left: 15px;">
+                <a href="../index.html" class="header__logo" style="margin-left: 0;">DOJO<span>X</span></a>
+            </div>
             <div class="user-profile">
                 <div class="user-avatar">BL</div>
                 <div class="user-info">
@@ -265,6 +269,14 @@
                     Profile Settings
                 </a>
                 <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+                <div class="dash-nav-item theme-toggle-mobile" style="cursor: pointer;">
+                    <i data-lucide="moon"></i>
+                    Theme Toggle
+                </div>
+                <div class="dash-nav-item rtl-toggle-mobile" style="cursor: pointer;">
+                    <i data-lucide="languages"></i>
+                    RTL Switch
+                </div>
                 <a href="../index.html?msg=logout_success" class="dash-nav-item" style="color: var(--primary-red);">
                     <i data-lucide="log-out"></i>
                     Logout
@@ -289,14 +301,14 @@
                         <div class="belt-progress-viz">
                             <div class="belt-fill"></div>
                             <div style="text-align: center; z-index: 2;">
-                                <h2 style="font-size: 3rem; margin: 0;">65%</h2>
+                                <h2 style="font-size: 3rem; margin: 0;color: white;">65%</h2>
                                 <p style="letter-spacing: 2px; font-size: 0.8rem;">TO PURPLE BELT</p>
                             </div>
                         </div>
                     </div>
                     <div class="stat-card">
                         <h3 style="margin-bottom: 15px;">Weekly Goal</h3>
-                        <div style="padding: 20px; background: #000; border-radius: 10px; border: 1px solid #333;">
+                        <div style="padding: 20px; background: #000; border-radius: 10px; border: 1px solid #333; color: white;">
                             <div style="display:flex; justify-content: space-between; margin-bottom: 10px;">
                                 <span>Training Hours</span><span>4.5 / 6</span>
                             </div>
@@ -385,7 +397,7 @@
                 <div
                     style="background: var(--bg-card); border-radius: 15px; overflow: hidden; margin-top: 15px; border: 1px solid #222;">
                     <table style="width: 100%; border-collapse: collapse;">
-                        <tr style="background: #111; text-align: left;">
+                        <tr style="background: #111; text-align: left; color: white;">
                             <th style="padding: 15px;">Date</th>
                             <th style="padding: 15px;">Description</th>
                             <th style="padding: 15px;">Amount</th>

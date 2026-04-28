@@ -23,9 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Global listener for mobile theme toggle
+    // Global listener for theme toggle (handles mobile and dashboard sidebar)
     document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('theme-toggle-mobile')) {
+        const btn = e.target.closest('.theme-toggle-mobile');
+        if (btn) {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             setTheme(currentTheme === 'dark' ? 'light' : 'dark');
         }
@@ -38,9 +39,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (rtlBtn) {
             rtlBtn.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
         }
-        // Update all RTL buttons (including mobile)
+        // Update all RTL buttons (including mobile and dashboard)
         document.querySelectorAll('.rtl-toggle-mobile').forEach(btn => {
-            btn.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+            const icon = btn.querySelector('i') || btn.querySelector('svg');
+            if (icon) {
+                // If there's an icon, preserve it and update the following text
+                const text = dir === 'rtl' ? ' LTR' : ' RTL';
+                const span = btn.querySelector('span');
+                if (span) {
+                    span.textContent = text;
+                } else {
+                    // Fallback: keep icon and replace other child nodes
+                    Array.from(btn.childNodes).forEach(node => {
+                        if (node !== icon) node.remove();
+                    });
+                    btn.appendChild(document.createTextNode(text));
+                }
+            } else {
+                btn.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+            }
         });
     };
 
@@ -55,9 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Global listener for mobile RTL toggle
+    // Global listener for RTL toggle (handles mobile and dashboard sidebar)
     document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('rtl-toggle-mobile')) {
+        const btn = e.target.closest('.rtl-toggle-mobile');
+        if (btn) {
             const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
             setDir(currentDir === 'rtl' ? 'ltr' : 'rtl');
         }

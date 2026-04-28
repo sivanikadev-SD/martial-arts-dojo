@@ -62,9 +62,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-
-
-
+  overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
@@ -89,6 +87,24 @@ body {
   padding-top: 0 !important;
 }
 
+/* Dashboard pages need space for header on mobile, but not on desktop */
+.dashboard-body {
+  padding-top: 80px;
+}
+
+@media (min-width: 1025px) {
+  .dashboard-body {
+    padding-top: 0 !important;
+  }
+}
+
+/* Remove nav bar in dashboard only for desktop (since sidebar takes over) */
+@media (min-width: 1025px) {
+  .dashboard-body .header {
+    display: none !important;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -108,10 +124,13 @@ h6 {
   letter-spacing: 1px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+}
+
 h2 {
   font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: var(--spacing-3);
-  color: var(--text-primary);
 }
 
 ul {
@@ -196,6 +215,7 @@ button {
   color: var(--text-primary);
   flex-shrink: 0;
   white-space: nowrap;
+  margin-left: 16px;
 }
 
 .header__logo span {
@@ -203,7 +223,9 @@ button {
 }
 
 /* Default: hide mobile-only elements on desktop */
-.mobile-only {
+.mobile-only,
+.mobile-controls,
+.mobile-login-link {
   display: none !important;
 }
 
@@ -213,6 +235,22 @@ button {
   justify-content: center;
   gap: var(--spacing-4);
   flex: 1;
+}
+
+.nav-links a {
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  position: relative;
+  opacity: 0.8;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  opacity: 1;
+  color: var(--primary-red);
 }
 
 .controls {
@@ -318,9 +356,10 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 40px;
-    gap: var(--spacing-4);
+    justify-content: flex-start;
+    padding: 90px 20px 40px;
+    gap: 15px;
+    overflow-y: auto;
     transform: translateX(100%);
     transition: var(--transition-slow);
     z-index: 1000;
@@ -340,6 +379,7 @@ button {
     font-size: 1.5rem;
     flex: 1;
     z-index: 1001;
+    padding-left: 20px;
   }
 
   .nav-links li {
@@ -348,18 +388,19 @@ button {
   }
 
   /* Make mobile-only elements visible in the drawer */
-  .mobile-only {
+  .mobile-only,
+  .mobile-login-link {
     display: block !important;
   }
 
   .nav-links li a {
     display: block;
-    padding: 10px;
-    font-size: 1.2rem;
+    padding: 8px;
+    font-size: 1.1rem;
   }
 
   .mobile-controls {
-    display: flex;
+    display: flex !important;
     gap: 15px;
     margin-top: auto; /* Push to bottom */
     padding: 20px;
@@ -389,8 +430,7 @@ button {
   }
 
   .controls {
-    gap: 12px;
-    margin-right: 15px;
+    display: none !important;
   }
 
   .burger {
@@ -425,7 +465,7 @@ button {
 /* Mobile: max 768px */
 @media (max-width: 768px) {
   .nav {
-    padding: 8px 0;
+    padding: 8px;
     min-height: 60px;
   }
 
@@ -460,7 +500,7 @@ button {
   }
 
   .nav {
-    padding: 6px 0;
+    padding: 6px;
     min-height: 50px;
   }
 

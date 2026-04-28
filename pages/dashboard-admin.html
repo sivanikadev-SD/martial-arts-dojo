@@ -33,8 +33,8 @@
             padding: 40px 20px;
             border-inline-end: 1px solid #222;
             position: sticky;
-            top: 80px;
-            height: calc(100vh - 80px);
+            top: 0;
+            height: 100vh;
             display: flex;
             flex-direction: column;
         }
@@ -156,7 +156,7 @@
             gap: 12px;
             padding: 12px 15px;
             border-radius: 10px;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
@@ -251,8 +251,11 @@
         </nav>
     </header>
 
-    <div class="admin-layout" style="padding-top: 80px;">
+    <div class="admin-layout">
         <aside class="admin-sidebar">
+            <div style="margin-bottom: 40px; padding-left: 15px;">
+                <a href="../index.html" class="header__logo" style="margin-left: 0;">DOJO<span>X</span></a>
+            </div>
             <div class="user-profile">
                 <div class="user-avatar">AD</div>
                 <div class="user-info">
@@ -278,6 +281,14 @@
                     System Settings
                 </a>
                 <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+                <div class="dash-nav-item theme-toggle-mobile" style="cursor: pointer;">
+                    <i data-lucide="moon"></i>
+                    Theme Toggle
+                </div>
+                <div class="dash-nav-item rtl-toggle-mobile" style="cursor: pointer;">
+                    <i data-lucide="languages"></i>
+                    RTL Switch
+                </div>
                 <a href="../index.html?msg=logout_success" class="dash-nav-item" style="color: var(--primary-red);">
                     <i data-lucide="log-out"></i>
                     Logout
@@ -326,7 +337,7 @@
                 <h3>Recent Registrations</h3>
                 <div class="table-wrap" style="margin-top:20px;">
                     <table>
-                        <tr style="background: #111;">
+                        <tr style="background: #111; color: white;">
                             <th>Student</th>
                             <th>Program</th>
                             <th>Rank</th>
