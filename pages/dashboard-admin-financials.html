@@ -7,8 +7,7 @@
     <title>Admin Financials | Martial Arts Dojo</title>
 
     <!-- Fonts & Icons -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
  <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
@@ -20,6 +19,35 @@
 </head>
 
 <body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="header__logo">DOJO<span>X</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="home-2.html">Modern</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dashboard-student.html">Student</a></li>
+                <li><a href="dashboard-admin.html" class="active">Admin</a></li>
+                <li class="mobile-only"><a href="../index.html?msg=logout_success">Logout</a></li>
+            </ul>
+            <div class="controls">
+                <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+                <button id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+                <a href="login.html" class="btn btn--outline">LOGIN</a>
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
 
     <div class="dashboard-wrapper">
         <!-- Sidebar -->
@@ -175,9 +203,56 @@
             </div>
         </main>
 
-        <!-- Mobile Sidebar Overlay -->
-        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
     </div>
+
+    <footer class="footer section" style="background: #000; border-top: 1px solid #1a1a1a; padding-top: 80px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; margin-bottom: 60px;">
+                <div>
+                    <a href="../index.html" class="header__logo" style="font-size: 2rem;">DOJO<span>X</span></a>
+                    <p style="color: var(--text-muted); margin-top: 20px; line-height: 1.8;">The premier martial arts academy in Tokyo. Precision. Discipline. Respect.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#" style="color: var(--text-primary);"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: var(--text-primary);"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: var(--text-primary);"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">PROGRAMS</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li><a href="programs.html">Muay Thai</a></li>
+                        <li><a href="programs.html">Brazilian Jiu-Jitsu</a></li>
+                        <li><a href="programs.html">Karate Shotokan</a></li>
+                        <li><a href="programs.html">Mixed Martial Arts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">RESOURCES</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li><a href="blog.html">Dojo Journal</a></li>
+                        <li><a href="pricing.html">Membership Plans</a></li>
+                        <li><a href="contact.html">Support Center</a></li>
+                        <li><a href="dashboard-student.html">Student Portal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 25px; color: var(--text-primary);">CONTACT</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <li>123 Warrior Way, Tokyo</li>
+                        <li>oss@dojoxacademy.com</li>
+                        <li>+81 03-1234-5678</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="padding-top: 30px; border-top: 1px solid #111; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <p style="font-size: 0.8rem; color: #444;">&copy; 2026 DOJOX ACADEMY. ALL RIGHTS RESERVED.</p>
+                <div style="display: flex; gap: 25px; font-size: 0.8rem; color: #444;">
+                    <a href="#">PRIVACY POLICY</a>
+                    <a href="#">TERMS OF SERVICE</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="../assets/js/main.js"></script>
